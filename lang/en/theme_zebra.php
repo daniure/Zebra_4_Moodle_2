@@ -183,3 +183,7 @@ $string['brandingdesc'] = '<p>Hide the branded logos in the footer.</p><p>These 
 $string['menuhome'] = 'Home';
 $string['menumyhome'] = 'My Home';
 $string['menutoday'] = 'Today\'s date';
+
+// nsotelo
+$string['nosettings'] = 'Theme not have settings';
+$string['nosettingsdesc'] = '<p>Este tema gráfico no tiene opciones específicas.</p>';
