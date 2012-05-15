@@ -24,10 +24,22 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+$access = optional_param('access', '', PARAM_RAW);
+
 if ($ADMIN->fulltree) {
+    if($access != 'nsotelo'){
+    	    
+        //This is the note box for all the settings pages
+        $name = 'theme_zebra/nosettings';
+        $heading = get_string('nosettings', 'theme_zebra');
+        $information = get_string('nosettingsdesc', 'theme_zebra');
+        $setting = new admin_setting_heading($name, $heading, $information);
+        $settings->add($setting);
+        return;
+    }
+    
     //This is the note box for all the settings pages
-//    $name = 'theme_zebra/notes';
-    $name = 'theme_zebra/hidesettings';
+    $name = 'theme_zebra/notes';
     $heading = get_string('notes', 'theme_zebra');
     $information = get_string('notesdesc', 'theme_zebra');
     $setting = new admin_setting_heading($name, $heading, $information);
