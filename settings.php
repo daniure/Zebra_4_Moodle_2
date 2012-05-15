@@ -26,7 +26,8 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
     //This is the note box for all the settings pages
-    $name = 'theme_zebra/notes';
+//    $name = 'theme_zebra/notes';
+    $name = 'theme_zebra/hidesettings';
     $heading = get_string('notes', 'theme_zebra');
     $information = get_string('notesdesc', 'theme_zebra');
     $setting = new admin_setting_heading($name, $heading, $information);
