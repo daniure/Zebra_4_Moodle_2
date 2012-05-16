@@ -89,5 +89,8 @@ function xmldb_theme_zebra_upgrade($oldversion) {
 	upgrade_plugin_savepoint(true, 2012050900, 'theme', 'zebra');
     }
 
+    //durena - Save default settings
+    require_once('settings_hook.php');
+
     return true;
 }

@@ -62,5 +62,8 @@ function xmldb_theme_zebra_install() {
     // Remove seventhcolor
     unset_config('seventhcolor', 'theme_zebra');
     
+    //durena - Save default settings
+    require_once('settings_hook.php');
+    
     return true;
 }
