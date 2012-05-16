@@ -18,14 +18,28 @@
  * zebra theme config page
  *
  * @package    theme_zebra
- * @copyright  2011 Danny Wahl
+ * @copyright  2012 Dani Ureña
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2012051600;
-$plugin->component = 'theme_zebra';
-$plugin->requires  = 2011120100;
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->release = '2.2.10 (Build: 2012051100)';
+global $CFG, $DB;
+$dbman = $DB->get_manager();
+
+$currentsetting = get_config('theme_zebra');
+
+if(empty($currentsetting->logourl)){
+    // Create logourl
+    set_config('logourl', ZEBRA_LOGOURL, 'theme_zebra');
+}
+if(empty($currentsetting->logourlheight)){
+    // Create logourlheight
+    set_config('logourlheight', ZEBRA_LOGOURLHEIGHT, 'theme_zebra');
+}
+if(empty($currentsetting->backgroundurl)){
+    // Create backgroundurl
+    set_config('backgroundurl', ZEBRA_BACKGROUNDURL, 'theme_zebra');
+}
+
+

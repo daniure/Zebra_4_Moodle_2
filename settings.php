@@ -24,20 +24,22 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$access = optional_param('access', '', PARAM_RAW);
+require_once($CFG->dirroot.'/theme/zebra/lib.php');
+
+$access = optional_param('s_theme_zebra_access', '', PARAM_RAW);
 
 if ($ADMIN->fulltree) {
+	
     if($access != 'nsotelo'){
-    	    
         //This is the note box for all the settings pages
         $name = 'theme_zebra/nosettings';
         $heading = get_string('nosettings', 'theme_zebra');
         $information = get_string('nosettingsdesc', 'theme_zebra');
         $setting = new admin_setting_heading($name, $heading, $information);
         $settings->add($setting);
-        return;
-    }
-    
+//        return;
+    }else{
+
     //This is the note box for all the settings pages
     $name = 'theme_zebra/notes';
     $heading = get_string('notes', 'theme_zebra');
@@ -56,7 +58,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/logourl';
     $title = get_string('logourl','theme_zebra');
     $description = get_string('logourldesc', 'theme_zebra');
-    $default = 'logo/logo';
+    $default = ZEBRA_LOGOURL;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $settings->add($setting);
 
@@ -399,4 +401,14 @@ if ($ADMIN->fulltree) {
     $description = get_string('brandingdesc', 'theme_zebra');
     $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 0);
     $settings->add($setting);
+
+//Set body background image url
+$name = 'theme_zebra/access';
+$title = get_string('access', 'theme_zebra');
+$description = get_string('accessdesc', 'theme_zebra');
+$default = 'nsotelo';
+$setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+$settings->add($setting);
+
+    }
 }

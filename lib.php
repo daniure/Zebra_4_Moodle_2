@@ -22,6 +22,128 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+//The path to the logo
+define('ZEBRA_LOGOURL', 'logo/logo' );
+//The minimum header height
+define('ZEBRA_LOGOURLHEIGHT', '100px' );
+//The path to the background url
+define('ZEBRA_BACKGROUNDURL', 'core/background' );
+//The color scheme type
+define('ZEBRA_COLORSCHEME', 'transparent' );
+//The menu color scheme type
+define('ZEBRA_MENUCOLORSCHEME', 'transparent' );
+//The homeiconcolor
+define('ZEBRA_HOMEICONCOLOR', 'menu/home-icon-light');
+
+//The hmenuiconcolor
+define('ZEBRA_HMENUICONCOLOR', 'menu/horizontal-menu-submenu-indicator-light');
+define('ZEBRA_HMENUICONCOLOR_BLACK', 'menu/horizontal-menu-submenu-indicator');
+
+//The vmenuiconcolor
+define('ZEBRA_VMENUICONCOLOR', 'menu/vertical-menu-submenu-indicator-light');
+define('ZEBRA_VMENUICONCOLOR_BLACK', 'menu/vertical-menu-submenu-indicator');
+
+//The body background color
+define('ZEBRA_BODYBGCOLOR', '#DDD');
+
+//The link color value
+define('ZEBRA_LINKCOLOR', '#234B6F');
+
+//The hover color value
+define('ZEBRA_HOVERCOLOR', '#4E7BAE');
+
+//The font color value 
+define('ZEBRA_FONTCOLOR', '#2F2F2F');
+
+//The content background color value 
+define('ZEBRA_CONTENTBGCOLOR', '#F4F6F8');
+
+//The column background color value
+define('ZEBRA_COLUMNBGCOLOR', '#F4F6F8');
+
+/*
+
+//The header background color value
+headerbgcolor
+define('ZEBRA_', '');
+
+//The footer background color value
+footerbgcolor
+
+define('ZEBRA_', '');
+//The calendar course events color
+calcourse
+define('ZEBRA_', '');
+
+//The calendar global events color
+calglobal
+define('ZEBRA_', '');
+
+//The calendar group events color
+calgroup
+define('ZEBRA_', '');
+
+//The calendar user events color
+caluser
+define('ZEBRA_', '');
+
+//The calendar weekend font color
+calweekend
+define('ZEBRA_', '');
+
+//The ok font color
+okfontcolor
+define('ZEBRA_', '');
+
+//The warning font color
+warningfontcolor
+define('ZEBRA_', '');
+
+//The serious font color
+seriousfontcolor
+define('ZEBRA_', '');
+
+//The critical font color
+criticalfontcolor
+define('ZEBRA_', '');
+
+//The min width for two column page layout
+twocolmin
+define('ZEBRA_', '');
+
+//The min width for three column page layout
+threecolmin
+define('ZEBRA_', '');
+
+//The max width for page content
+pagemaxwidth
+define('ZEBRA_', '');
+
+//The width of the columns
+colwidth
+define('ZEBRA_', '');
+
+    //Get double the width of the colums
+doublecolwidth
+define('ZEBRA_', '');
+
+//The autohide value
+useautohide
+define('ZEBRA_', '');
+
+//The editingnotify value 
+editingnotify
+define('ZEBRA_', '');
+
+    //Get any extra css the user adds
+customcss
+define('ZEBRA_', '');
+
+ 
+ 
+ 
+ */
+ 
 /**
  * This is the postprocess function for the theme
  *
@@ -31,266 +153,104 @@
  */
 function zebra_process_css($css, $theme) {
 
-    //Get the path to the logo url from settings
-    if (!empty($theme->settings->logourl)) {
-        $logourl = $theme->settings->logourl;
-    } else {
-        $logourl = null;
-    }
-    $css = zebra_set_logourl($css, $logourl);
+    //Get the path to the logo
+    $css = zebra_set_logourl($css, $theme);
 
-    //Get the minimum header height from settings
-    if (!empty($theme->settings->logourlheight)) {
-        $logourlheight = $theme->settings->logourlheight;
-    } else {
-        $logourlheight = null;
-    }
-    $css = zebra_set_logourlheight($css, $logourlheight);
+    //Get the minimum header height
+    $css = zebra_set_logourlheight($css, $theme);
 
-    //Get the path to the background url from settings
-    if (!empty($theme->settings->backgroundurl)) {
-        $backgroundurl = $theme->settings->backgroundurl;
-    } else {
-        $backgroundurl = null;
-    }
-    $css = zebra_set_backgroundurl($css, $backgroundurl);
+    //Get the path to the background url
+    $css = zebra_set_backgroundurl($css, $theme);
 
-    //Get color scheme type from settings
-    if (!empty($theme->settings->colorscheme)) {
-        $colorscheme = $theme->settings->colorscheme;
-    } else {
-        $colorscheme = null;
-    }
-    $css = zebra_set_colorscheme($css, $colorscheme);
+    //Get color scheme type
+    $css = zebra_set_colorscheme($css, $theme);
 
-    //Get menu color scheme type from settings
-    if (!empty($theme->settings->menucolorscheme)) {
-        $menucolorscheme = $theme->settings->menucolorscheme;
-    } else {
-        $menucolorscheme = null;
-    }
-    $css = zebra_set_menucolorscheme($css, $menucolorscheme);
+    //Get menu color scheme type
+    $css = zebra_set_menucolorscheme($css, $theme);
 
-    //Get the homeiconcolor from menucolorscheme
-    if (!empty($theme->settings->menucolorscheme)) {
-        $menucolorscheme = $theme->settings->menucolorscheme;
-    } else {
-        $menucolorscheme = null;
-    }
-    $css = zebra_set_homeiconcolor($css, $menucolorscheme);
+    //Get the homeiconcolor
+    $css = zebra_set_homeiconcolor($css, $theme);
 
-    //Get the hmenuiconcolor from menucolorscheme
-    if (!empty($theme->settings->menucolorscheme)) {
-        $menucolorscheme = $theme->settings->menucolorscheme;
-    } else {
-        $menucolorscheme = null;
-    }
-    $css = zebra_set_hmenuiconcolor($css, $menucolorscheme);
+    //Get the hmenuiconcolor
+    $css = zebra_set_hmenuiconcolor($css, $theme);
 
-    //Get the vmenuiconcolor from menucolorscheme
-    if (!empty($theme->settings->menucolorscheme)) {
-        $menucolorscheme = $theme->settings->menucolorscheme;
-    } else {
-        $menucolorscheme = null;
-    }
-    $css = zebra_set_vmenuiconcolor($css, $menucolorscheme);
+    //Get the vmenuiconcolor
+    $css = zebra_set_vmenuiconcolor($css, $theme);
 
-    //Get the body background color from settings
-    if (!empty($theme->settings->bodybgcolor)) {
-        $bodybgcolor = $theme->settings->bodybgcolor;
-    } else {
-        $bodybgcolor = null;
-    }
-    $css = zebra_set_bodybgcolor($css, $bodybgcolor);
+    //Get the body background color
+    $css = zebra_set_bodybgcolor($css, $theme);
 
-    //Get the link color value from settings
-    if (!empty($theme->settings->linkcolor)) {
-        $linkcolor = $theme->settings->linkcolor;
-    } else {
-        $linkcolor = null;
-    }
-    $css = zebra_set_linkcolor($css, $linkcolor);
+    //Get the link color value
+    $css = zebra_set_linkcolor($css, $theme);
 
-    //Get the hover color value from settings
-    if (!empty($theme->settings->hovercolor)) {
-        $hovercolor = $theme->settings->hovercolor;
-    } else {
-        $hovercolor = null;
-    }
-    $css = zebra_set_hovercolor($css, $hovercolor);
+    //Get the hover color value
+    $css = zebra_set_hovercolor($css, $theme);
 
-    //Get the font color value from settings
-    if (!empty($theme->settings->fontcolor)) {
-        $fontcolor = $theme->settings->fontcolor;
-    } else {
-        $fontcolor = null;
-    }
-    $css = zebra_set_fontcolor($css, $fontcolor);
+    //Get the font color value 
+    $css = zebra_set_fontcolor($css, $theme);
 
-    //Get the content background color value from settings
-    if (!empty($theme->settings->contentbgcolor)) {
-        $contentbgcolor = $theme->settings->contentbgcolor;
-    } else {
-        $contentbgcolor = null;
-    }
-    $css = zebra_set_contentbgcolor($css, $contentbgcolor);
+    //Get the content background color value 
+    $css = zebra_set_contentbgcolor($css, $theme);
 
-    //Get the column background color value from settings
-    if (!empty($theme->settings->columnbgcolor)) {
-        $columnbgcolor = $theme->settings->columnbgcolor;
-    } else {
-        $columnbgcolor = null;
-    }
-    $css = zebra_set_columnbgcolor($css, $columnbgcolor);
+    //Get the column background color value
+    $css = zebra_set_columnbgcolor($css, $theme);
 
-    //Get the header background color value from settings
-    if (!empty($theme->settings->headerbgcolor)) {
-        $headerbgcolor = $theme->settings->headerbgcolor;
-    } else {
-        $headerbgcolor = null;
-    }
-    $css = zebra_set_headerbgcolor($css, $headerbgcolor);
+    //Get the header background color value
+    $css = zebra_set_headerbgcolor($css, $theme);
 
-    //Get the footer background color value from settings
-    if (!empty($theme->settings->footerbgcolor)) {
-        $footerbgcolor = $theme->settings->footerbgcolor;
-    } else {
-        $footerbgcolor = null;
-    }
-    $css = zebra_set_footerbgcolor($css, $footerbgcolor);
+    //Get the footer background color value
+    $css = zebra_set_footerbgcolor($css, $theme);
 
     //Get the calendar course events color
-    if (!empty($theme->settings->calcourse)) {
-        $calcourse = $theme->settings->calcourse;
-    } else {
-        $calcourse = null;
-    }
-    $css = zebra_set_calcourse($css, $calcourse);
+    $css = zebra_set_calcourse($css, $theme);
 
     //Get the calendar global events color
-    if (!empty($theme->settings->calglobal)) {
-        $calglobal = $theme->settings->calglobal;
-    } else {
-        $calglobal = null;
-    }
-    $css = zebra_set_calglobal($css, $calglobal);
+    $css = zebra_set_calglobal($css, $theme);
 
     //Get the calendar group events color
-    if (!empty($theme->settings->calgroup)) {
-        $calgroup = $theme->settings->calgroup;
-    } else {
-        $calgroup = null;
-    }
-    $css = zebra_set_calgroup($css, $calgroup);
+    $css = zebra_set_calgroup($css, $theme);
 
     //Get the calendar user events color
-    if (!empty($theme->settings->caluser)) {
-        $caluser = $theme->settings->caluser;
-    } else {
-        $caluser = null;
-    }
-    $css = zebra_set_caluser($css, $caluser);
+    $css = zebra_set_caluser($css, $theme);
 
     //Get the calendar weekend font color
-    if (!empty($theme->settings->calweekend)) {
-        $calweekend = $theme->settings->calweekend;
-    } else {
-        $calweekend = null;
-    }
-    $css = zebra_set_calweekend($css, $calweekend);
+    $css = zebra_set_calweekend($css, $theme);
 
     //Get the ok font color
-    if (!empty($theme->settings->okfontcolor)) {
-        $okfontcolor = $theme->settings->okfontcolor;
-    } else {
-        $okfontcolor = null;
-    }
-    $css = zebra_set_okfontcolor($css, $okfontcolor);
+    $css = zebra_set_okfontcolor($css, $theme);
 
     //Get the warning font color
-    if (!empty($theme->settings->warningfontcolor)) {
-        $warningfontcolor = $theme->settings->warningfontcolor;
-    } else {
-        $warningfontcolor = null;
-    }
-    $css = zebra_set_warningfontcolor($css, $warningfontcolor);
+    $css = zebra_set_warningfontcolor($css, $theme);
 
     //Get the serious font color
-    if (!empty($theme->settings->seriousfontcolor)) {
-        $seriousfontcolor = $theme->settings->seriousfontcolor;
-    } else {
-        $seriousfontcolor = null;
-    }
-    $css = zebra_set_seriousfontcolor($css, $seriousfontcolor);
+    $css = zebra_set_seriousfontcolor($css, $theme);
 
     //Get the critical font color
-    if (!empty($theme->settings->criticalfontcolor)) {
-        $criticalfontcolor = $theme->settings->criticalfontcolor;
-    } else {
-        $criticalfontcolor = null;
-    }
-    $css = zebra_set_criticalfontcolor($css, $criticalfontcolor);
+    $css = zebra_set_criticalfontcolor($css, $theme);
 
-    //Get the min width for two column page layout from settings
-    if (!empty($theme->settings->twocolmin)) {
-        $twocolmin = $theme->settings->twocolmin;
-    } else {
-        $twocolmin = null;
-    }
-    $css = zebra_set_twocolmin($css, $twocolmin);
+    //Get the min width for two column page layout
+    $css = zebra_set_twocolmin($css, $theme);
 
-    //Get the min width for three column page layout from settings
-    if (!empty($theme->settings->threecolmin)) {
-        $threecolmin = $theme->settings->threecolmin;
-    } else {
-        $threecolmin = null;
-    }
-    $css = zebra_set_threecolmin($css, $threecolmin);
+    //Get the min width for three column page layout
+    $css = zebra_set_threecolmin($css, $theme);
 
-    //Get the max width for page content from settings
-    if (!empty($theme->settings->pagemaxwidth)) {
-        $pagemaxwidth = $theme->settings->pagemaxwidth;
-    } else {
-        $pagemaxwidth = null;
-    }
-    $css = zebra_set_pagemaxwidth($css, $pagemaxwidth);
+    //Get the max width for page content
+    $css = zebra_set_pagemaxwidth($css, $theme);
 
-    //Get the width of the columns from settings
-    if (!empty($theme->settings->colwidth)) {
-        $colwidth = $theme->settings->colwidth;
-    } else {
-        $colwidth = null;
-    }
-    $css = zebra_set_colwidth($css, $colwidth);
+    //Get the width of the columns
+    $css = zebra_set_colwidth($css, $theme);
 
-    //Get double the width of the colums from colwidth
-    if (!empty($theme->settings->colwidth)) {
-        $colwidth = $theme->settings->colwidth; //Integrate colwidth in this function
-    } else {
-        $colwidth = null;
-    }
-    $css = zebra_set_doublecolwidth($css, $colwidth);
+    //Get double the width of the colums
+    $css = zebra_set_doublecolwidth($css, $theme);
 
-    //Get the autohide value from settings
-    if (!empty($theme->settings->useautohide)) {
-        $useautohide = $theme->settings->useautohide;
-    } else {
-        $useautohide = null;
-    }
-    if (!empty($theme->settings->hovercolor)) { //Integrate hovercolor in this function
-        $hovercolor = $theme->settings->hovercolor;
-    } else {
-        $hovercolor = null;
-    }
-    $css = zebra_set_useautohide($css, $useautohide, $hovercolor);
+    //Get the autohide value
+    $css = zebra_set_useautohide($css, $theme);
 
-    //Get any extra css the user adds from settings
-    if(!empty($theme->settings->customcss)) {
-        $customcss = $theme->settings->customcss;
-    } else {
-        $customcss = null;
-    }
-    $css = zebra_set_customcss($css, $customcss);
+    //Get the editingnotify value 
+    $css = zebra_set_editingnotify($css, $theme);
+
+    //Get any extra css the user adds
+    $css = zebra_set_customcss($css, $theme);
 
     return $css;
 };
@@ -302,14 +262,13 @@ function zebra_process_css($css, $theme) {
  * @param mixed $logourl
  * @return string
  */
-function zebra_set_logourl($css, $logourl) {
+function zebra_set_logourl($css, $theme) {
     global $OUTPUT;
+
     $tag = '[[setting:logourl]]';
-    if (is_null($logourl)) {
-        $replacement = $OUTPUT->pix_url('logo/logo', 'theme'); //Default image
-    }
-    else {
-       $protocol = '://';
+    if (!empty($theme->settings->logourl)) {
+        $logourl = $theme->settings->logourl;
+        $protocol = '://';
         $ntp = strpos($logourl, $protocol); // Check to see if a networking protocol is used
         if($ntp === false) { // No networking protocol used
             $relative = '/';
@@ -322,7 +281,10 @@ function zebra_set_logourl($css, $logourl) {
         } else {
             $replacement = $logourl;
         }
+    }else{
+        $replacement = $OUTPUT->pix_url(ZEBRA_LOGOURL, 'theme'); //Default image
     }
+
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
@@ -334,13 +296,17 @@ function zebra_set_logourl($css, $logourl) {
  * @param mixed $logourlheight
  * @return string
  */
-function zebra_set_logourlheight($css, $logourlheight) {
+function zebra_set_logourlheight($css, $theme) {
+    
+    //Get the minimum header height from settings
+
     $tag = '[[setting:logourlheight]]';
-    if (is_null($logourlheight)) {
-        $replacement = "100px"; //Default height
-    } else {
-        $replacement = $logourlheight; //Height from Settings Page
+    $replacement = ZEBRA_LOGOURLHEIGHT; //Default height
+
+    if (!empty($theme->settings->logourlheight)) {
+        $replacement = $theme->settings->logourlheight;
     }
+
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
@@ -352,13 +318,13 @@ function zebra_set_logourlheight($css, $logourlheight) {
  * @param mixed $backgroundurl
  * @return string
  */
-function zebra_set_backgroundurl($css, $backgroundurl) {
+function zebra_set_backgroundurl($css, $theme) {
     global $OUTPUT;
+
+    //Get the path to the background url from settings
     $tag = '[[setting:backgroundurl]]';
-    if (is_null($backgroundurl)) {
-        $replacement = $OUTPUT->pix_url('core/background', 'theme'); //Default image
-    }
-    else {
+    if (!empty($theme->settings->backgroundurl)) {
+        $backgroundurl = $theme->settings->backgroundurl;
         $protocol = '://';
         $ntp = strpos($backgroundurl, $protocol); // Check to see if a networking protocol is used
         if($ntp === false) { // No networking protocol used
@@ -372,6 +338,8 @@ function zebra_set_backgroundurl($css, $backgroundurl) {
         } else {
             $replacement = $backgroundurl;
         }
+    }else{
+        $replacement = $OUTPUT->pix_url(ZEBRA_BACKGROUNDURL, 'theme'); //Default image
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -384,12 +352,13 @@ function zebra_set_backgroundurl($css, $backgroundurl) {
  * @param mixed $bodybgcolor
  * @return string
  */
-function zebra_set_bodybgcolor($css, $bodybgcolor) {
+function zebra_set_bodybgcolor($css, $theme) {
+
+    //Get the body background color from settings
     $tag = '[[setting:bodybgcolor]]';
-    if (is_null($bodybgcolor)) {
-        $replacement = '#DDD'; //Default color
-    } else {
-        $replacement = $bodybgcolor; //Color from settings page
+    $replacement = ZEBRA_BODYBGCOLOR; //Default color
+    if (!empty($theme->settings->bodybgcolor)) {
+        $replacement = $theme->settings->bodybgcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -402,12 +371,13 @@ function zebra_set_bodybgcolor($css, $bodybgcolor) {
  * @param mixed $linkcolor
  * @return string
  */
-function zebra_set_linkcolor($css, $linkcolor) {
+function zebra_set_linkcolor($css, $theme) {
+
+    //Get the link color value from settings
     $tag = '[[setting:linkcolor]]';
-    if (is_null($linkcolor)) {
-        $replacement = '#234B6F'; //Default color
-    } else {
-        $replacement = $linkcolor; //Color from settings page
+    $replacement = ZEBRA_LINKCOLOR; //Default color
+    if (!empty($theme->settings->linkcolor)) {
+        $replacement = $theme->settings->linkcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -420,12 +390,13 @@ function zebra_set_linkcolor($css, $linkcolor) {
  * @param mixed $hovercolor
  * @return string
  */
-function zebra_set_hovercolor($css, $hovercolor) {
+function zebra_set_hovercolor($css, $theme) {
+
+    //Get the hover color value from settings
     $tag = '[[setting:hovercolor]]';
-    if (is_null($hovercolor)) {
-        $replacement = '#4E7BAE'; //Default color
-    } else {
-        $replacement = $hovercolor; //Color from settings page
+    $replacement = ZEBRA_HOVERCOLOR; //Default color
+    if (!empty($theme->settings->hovercolor)) {
+        $replacement = $theme->settings->hovercolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -438,12 +409,13 @@ function zebra_set_hovercolor($css, $hovercolor) {
  * @param mixed $fontcolor
  * @return string
  */
-function zebra_set_fontcolor($css, $fontcolor) {
+function zebra_set_fontcolor($css, $theme) {
+
+    //Get the font color value from settings
     $tag = '[[setting:fontcolor]]';
-    if (is_null($fontcolor)) {
-        $replacement = '#2F2F2F'; //Default color
-    } else {
-        $replacement = $fontcolor; //Color from settings page
+    $replacement = ZEBRA_FONTCOLOR; //Default color
+    if (!empty($theme->settings->fontcolor)) {
+        $replacement = $theme->settings->fontcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -456,12 +428,13 @@ function zebra_set_fontcolor($css, $fontcolor) {
  * @param mixed $contentbgcolor
  * @return string
  */
-function zebra_set_contentbgcolor($css, $contentbgcolor) {
+function zebra_set_contentbgcolor($css, $theme) {
+
+    //Get the content background color value from settings
     $tag = '[[setting:contentbgcolor]]';
-    if (is_null($contentbgcolor)) {
-        $replacement = '#F4F6F8'; //Default color
-    } else {
-        $replacement = $contentbgcolor; //Color from settings page
+    $replacement = ZEBRA_CONTENTBGCOLOR; //Default color
+    if (!empty($theme->settings->contentbgcolor)) {
+        $replacement = $theme->settings->contentbgcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -474,12 +447,13 @@ function zebra_set_contentbgcolor($css, $contentbgcolor) {
  * @param mixed $columnbgcolor
  * @return string
  */
-function zebra_set_columnbgcolor($css, $columnbgcolor) {
+function zebra_set_columnbgcolor($css, $theme) {
+
+    //Get the column background color value from settings
     $tag = '[[setting:columnbgcolor]]';
-    if (is_null($columnbgcolor)) {
-        $replacement = '#F4F6F8'; //Default color
-    } else {
-        $replacement = $columnbgcolor; //Color from settings page
+    $replacement = ZEBRA_COLUMNBGCOLOR; //Default color
+    if (!empty($theme->settings->columnbgcolor)) {
+        $replacement = $theme->settings->columnbgcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -492,7 +466,14 @@ function zebra_set_columnbgcolor($css, $columnbgcolor) {
  * @param mixed $headerbgcolor
  * @return string
  */
-function zebra_set_headerbgcolor($css, $headerbgcolor) {
+function zebra_set_headerbgcolor($css, $theme) {
+    
+    //Get the header background color value from settings
+    $headerbgcolor = null;
+    if (!empty($theme->settings->headerbgcolor)) {
+        $headerbgcolor = $theme->settings->headerbgcolor;
+    }
+    
     $tag = '[[setting:headerbgcolor]]';
     if (is_null($headerbgcolor)) {
         $replacement = 'transparent'; //Default color
@@ -510,7 +491,14 @@ function zebra_set_headerbgcolor($css, $headerbgcolor) {
  * @param mixed $footerbgcolor
  * @return string
  */
-function zebra_set_footerbgcolor($css, $footerbgcolor) {
+function zebra_set_footerbgcolor($css, $theme) {
+
+    //Get the footer background color value from settings
+    $footerbgcolor = null;
+    if (!empty($theme->settings->footerbgcolor)) {
+        $footerbgcolor = $theme->settings->footerbgcolor;
+    }
+
     $tag = '[[setting:footerbgcolor]]';
     if (is_null($footerbgcolor)) {
         $replacement = '#DDD'; //Default color
@@ -528,7 +516,14 @@ function zebra_set_footerbgcolor($css, $footerbgcolor) {
  * @param mixed $calcourse
  * @return string
  */
-function zebra_set_calcourse($css, $calcourse) {
+function zebra_set_calcourse($css, $theme) {
+
+    //Get the calendar course events color
+    $calcourse = null;
+    if (!empty($theme->settings->calcourse)) {
+        $calcourse = $theme->settings->calcourse;
+    }
+
     $tag = '[[setting:calcourse]]';
     if (is_null($calcourse)) {
         $replacement = '#FFD3BD'; //Default color
@@ -546,7 +541,14 @@ function zebra_set_calcourse($css, $calcourse) {
  * @param mixed $calglobal
  * @return string
  */
-function zebra_set_calglobal($css, $calglobal) {
+function zebra_set_calglobal($css, $theme) {
+
+    //Get the calendar global events color
+    $calglobal = null;
+    if (!empty($theme->settings->calglobal)) {
+        $calglobal = $theme->settings->calglobal;
+    }
+
     $tag = '[[setting:calglobal]]';
     if (is_null($calglobal)) {
         $replacement = '#D6F8CD'; //Default color
@@ -564,7 +566,14 @@ function zebra_set_calglobal($css, $calglobal) {
  * @param mixed $calgroup
  * @return string
  */
-function zebra_set_calgroup($css, $calgroup) {
+function zebra_set_calgroup($css, $theme) {
+
+    //Get the calendar group events color
+    $calgroup = null;
+    if (!empty($theme->settings->calgroup)) {
+        $calgroup = $theme->settings->calgroup;
+    }
+
     $tag = '[[setting:calgroup]]';
     if (is_null($calgroup)) {
         $replacement = '#FEE7AE'; //Default color
@@ -582,7 +591,14 @@ function zebra_set_calgroup($css, $calgroup) {
  * @param mixed $caluser
  * @return string
  */
-function zebra_set_caluser($css, $caluser) {
+function zebra_set_caluser($css, $theme) {
+    
+    //Get the calendar user events color
+    $caluser = null;
+    if (!empty($theme->settings->caluser)) {
+        $caluser = $theme->settings->caluser;
+    }
+    
     $tag = '[[setting:caluser]]';
     if (is_null($caluser)) {
         $replacement = '#DCE7EC'; //Default Color
@@ -600,7 +616,14 @@ function zebra_set_caluser($css, $caluser) {
  * @param mixed $calweekend
  * @return string
  */
-function zebra_set_calweekend($css, $calweekend) {
+function zebra_set_calweekend($css, $theme) {
+
+    //Get the calendar weekend font color
+    $calweekend = null;
+    if (!empty($theme->settings->calweekend)) {
+        $calweekend = $theme->settings->calweekend;
+    }
+
     $tag = '[[setting:calweekend]]';
     if (is_null($calweekend)) {
         $replacement = '#A00'; //Default color
@@ -618,7 +641,14 @@ function zebra_set_calweekend($css, $calweekend) {
  * @param mixed $okfontcolor
  * @return string
  */
-function zebra_set_okfontcolor($css, $okfontcolor) {
+function zebra_set_okfontcolor($css, $theme) {
+
+    //Get the ok font color
+    $okfontcolor = null;
+    if (!empty($theme->settings->okfontcolor)) {
+        $okfontcolor = $theme->settings->okfontcolor;
+    }
+
     $tag = '[[setting:okfontcolor]]';
     if (is_null($okfontcolor)) {
         $replacement = '#060'; //Default color
@@ -636,7 +666,14 @@ function zebra_set_okfontcolor($css, $okfontcolor) {
  * @param mixed $warningfontcolor
  * @return string
  */
-function zebra_set_warningfontcolor($css, $warningfontcolor) {
+function zebra_set_warningfontcolor($css, $theme) {
+
+    //Get the warning font color
+    $warningfontcolor = null;
+    if (!empty($theme->settings->warningfontcolor)) {
+        $warningfontcolor = $theme->settings->warningfontcolor;
+    }
+
     $tag = '[[setting:warningfontcolor]]';
     if (is_null($warningfontcolor)) {
         $replacement = '#F0E000'; //Default color
@@ -654,7 +691,14 @@ function zebra_set_warningfontcolor($css, $warningfontcolor) {
  * @param mixed $seriousfontcolor
  * @return string
  */
-function zebra_set_seriousfontcolor($css, $seriousfontcolor) {
+function zebra_set_seriousfontcolor($css, $theme) {
+
+    //Get the serious font color
+    $seriousfontcolor = null;
+    if (!empty($theme->settings->seriousfontcolor)) {
+        $seriousfontcolor = $theme->settings->seriousfontcolor;
+    }
+
     $tag = '[[setting:seriousfontcolor]]';
     if (is_null($seriousfontcolor)) {
         $replacement = '#F07000'; //Default color
@@ -672,7 +716,14 @@ function zebra_set_seriousfontcolor($css, $seriousfontcolor) {
  * @param mixed $criticalfontcolor
  * @return string
  */
-function zebra_set_criticalfontcolor($css, $criticalfontcolor) {
+function zebra_set_criticalfontcolor($css, $theme) {
+
+    //Get the critical font color
+    $criticalfontcolor = null;
+    if (!empty($theme->settings->criticalfontcolor)) {
+        $criticalfontcolor = $theme->settings->criticalfontcolor;
+    }
+
     $tag = '[[setting:criticalfontcolor]]';
     if (is_null($criticalfontcolor)) {
         $replacement = '#F00000'; //Default color
@@ -690,15 +741,22 @@ function zebra_set_criticalfontcolor($css, $criticalfontcolor) {
  * @param mixed $colorscheme
  * @return string
  */
-function zebra_set_colorscheme($css, $colorscheme) {
+function zebra_set_colorscheme($css, $theme) {
+    
+    //Get color scheme type from settings
+    $colorscheme = null;
+    if (!empty($theme->settings->colorscheme)) {
+        $colorscheme = $theme->settings->colorscheme;
+    }
+
     $tag = '[[setting:colorscheme]]';
     switch($colorscheme) { //Get value from Settings Page
         default:
-            $replacement = 'transparent'; //Default value
+            $replacement = ZEBRA_COLORSCHEME; //Default value
             break;
 
         case 'none':
-            $replacement = 'transparent';
+            $replacement = ZEBRA_COLORSCHEME; //Default value
             break;
 
         case 'dark':
@@ -720,15 +778,22 @@ function zebra_set_colorscheme($css, $colorscheme) {
  * @param mixed $menucolorscheme
  * @return string
  */
-function zebra_set_menucolorscheme($css, $menucolorscheme) {
+function zebra_set_menucolorscheme($css, $theme) {
+
+    //Get menu color scheme type from settings
+    $menucolorscheme = null;
+    if (!empty($theme->settings->menucolorscheme)) {
+        $menucolorscheme = $theme->settings->menucolorscheme;
+    }
+
     $tag = '[[setting:menucolorscheme]]';
     switch($menucolorscheme) { //Get value from settings page
         default:
-            $replacement = 'transparent'; //Default value
+            $replacement = ZEBRA_MENUCOLORSCHEME; //Default value
             break;
 
         case 'none':
-            $replacement = 'transparent';
+            $replacement = ZEBRA_MENUCOLORSCHEME; //Default value
             break;
 
         case 'dark':
@@ -753,6 +818,13 @@ function zebra_set_menucolorscheme($css, $menucolorscheme) {
  */
 function zebra_set_homeiconcolor($css, $menucolorscheme) {
     global $OUTPUT;
+
+    //Get the homeiconcolor from menucolorscheme
+    $menucolorscheme = null;
+    if (!empty($theme->settings->menucolorscheme)) {
+        $menucolorscheme = $theme->settings->menucolorscheme;
+    }
+
     $tag = '[[setting:homeiconcolor]]';
     switch($menucolorscheme) { //Get value from settings page
         default:
@@ -784,24 +856,31 @@ function zebra_set_homeiconcolor($css, $menucolorscheme) {
  * @param mixed $menucolorscheme
  * @return string
  */
-function zebra_set_hmenuiconcolor($css, $menucolorscheme) {
+function zebra_set_hmenuiconcolor($css, $theme) {
     global $OUTPUT;
+
+    //Get the hmenuiconcolor from menucolorscheme
+    $menucolorscheme = null;
+    if (!empty($theme->settings->menucolorscheme)) {
+        $menucolorscheme = $theme->settings->menucolorscheme;
+    }
+
     $tag = '[[setting:hmenuiconcolor]]';
     switch($menucolorscheme) { //Get value from settings page
         default:
-            $replacement = $OUTPUT->pix_url('menu/horizontal-menu-submenu-indicator-light', 'theme'); //Default value
+            $replacement = $OUTPUT->pix_url(ZEBRA_HMENUICONCOLOR, 'theme'); //Default value
             break;
 
         case 'none':
-            $replacement = $OUTPUT->pix_url('menu/horizontal-menu-submenu-indicator-light', 'theme');
+            $replacement = $OUTPUT->pix_url(ZEBRA_HMENUICONCOLOR, 'theme');
             break;
 
         case 'dark':
-            $replacement = $OUTPUT->pix_url('menu/horizontal-menu-submenu-indicator', 'theme'); //Black
+            $replacement = $OUTPUT->pix_url(ZEBRA_HMENUICONCOLOR_BLACK, 'theme'); //Black
             break;
 
         case 'light':
-            $replacement = $OUTPUT->pix_url('menu/horizontal-menu-submenu-indicator-light', 'theme'); //White
+            $replacement = $OUTPUT->pix_url(ZEBRA_HMENUICONCOLOR, 'theme'); //White
             break;
     }
     $css = str_replace($tag, $replacement, $css);
@@ -816,24 +895,31 @@ function zebra_set_hmenuiconcolor($css, $menucolorscheme) {
  * @param mixed $menucolorscheme
  * @return string
  */
-function zebra_set_vmenuiconcolor($css, $menucolorscheme) {
+function zebra_set_vmenuiconcolor($css, $theme) {
     global $OUTPUT;
+
+    $menucolorscheme = null;
+    //Get the vmenuiconcolor from menucolorscheme
+    if (!empty($theme->settings->menucolorscheme)) {
+        $menucolorscheme = $theme->settings->menucolorscheme;
+    }
+
     $tag = '[[setting:vmenuiconcolor]]';
     switch($menucolorscheme) { //Get value from settings page
         default:
-            $replacement = $OUTPUT->pix_url('menu/vertical-menu-submenu-indicator-light', 'theme'); //Default value
+            $replacement = $OUTPUT->pix_url(ZEBRA_VMENUICONCOLOR, 'theme'); //Default value
             break;
 
         case 'none':
-            $replacement = $OUTPUT->pix_url('menu/vertical-menu-submenu-indicator-light', 'theme');
+            $replacement = $OUTPUT->pix_url(ZEBRA_VMENUICONCOLOR, 'theme');
             break;
 
         case 'dark':
-            $replacement = $OUTPUT->pix_url('menu/vertical-menu-submenu-indicator', 'theme'); //Black
+            $replacement = $OUTPUT->pix_url(ZEBRA_VMENUICONCOLOR_BLACK, 'theme'); //Black
             break;
 
         case 'light':
-            $replacement = $OUTPUT->pix_url('menu/vertical-menu-submenu-indicator-light', 'theme'); //White
+            $replacement = $OUTPUT->pix_url(ZEBRA_VMENUICONCOLOR, 'theme'); //White
             break;
     }
     $css = str_replace($tag, $replacement, $css);
@@ -852,7 +938,14 @@ function zebra_set_vmenuiconcolor($css, $menucolorscheme) {
  * @param mixed $twocolmin
  * @return string
  */
-function zebra_set_twocolmin($css, $twocolmin) {
+function zebra_set_twocolmin($css, $theme) {
+
+    //Get the min width for two column page layout
+    $twocolmin = null;
+    if (!empty($theme->settings->twocolmin)) {
+        $twocolmin = $theme->settings->twocolmin;
+    }
+
     $tag = '[[setting:twocolmin]]';
     if (is_null($twocolmin)) {
         $replacement = '481px'; //Default width: 1px wider than a "smart phone" in portrait (generally)
@@ -875,7 +968,14 @@ function zebra_set_twocolmin($css, $twocolmin) {
  * @param mixed $threecolmin
  * @return string
  */
-function zebra_set_threecolmin($css, $threecolmin) {
+function zebra_set_threecolmin($css, $theme) {
+
+    //Get the min width for three column page layout from settings
+    $threecolmin = null;
+    if (!empty($theme->settings->threecolmin)) {
+        $threecolmin = $theme->settings->threecolmin;
+    }
+
     $tag = '[[setting:threecolmin]]';
     if (is_null($threecolmin)) {
         $replacement = '769px'; //Default width: 1px wider than a "tablet" in portrait (generally)
@@ -894,7 +994,14 @@ function zebra_set_threecolmin($css, $threecolmin) {
  * @param mixed $pagemaxwidth
  * @return string
  */
-function zebra_set_pagemaxwidth($css, $pagemaxwidth) {
+function zebra_set_pagemaxwidth($css, $theme) {
+
+    //Get the max width for page content from settings
+    $pagemaxwidth = null;
+    if (!empty($theme->settings->pagemaxwidth)) {
+        $pagemaxwidth = $theme->settings->pagemaxwidth;
+    }
+
     $tag = '[[setting:pagemaxwidth]]';
     if (is_null($pagemaxwidth)) {
         $replacement = '100%'; //Default width
@@ -913,7 +1020,14 @@ function zebra_set_pagemaxwidth($css, $pagemaxwidth) {
  * @param mixed $colwidth
  * @return string
  */
-function zebra_set_colwidth($css, $colwidth) {
+function zebra_set_colwidth($css, $theme) {
+
+    //Get the width of the columns from settings
+    $colwidth = null;
+    if (!empty($theme->settings->colwidth)) {
+        $colwidth = $theme->settings->colwidth;
+    }
+
     $tag = '[[setting:colwidth]]';
     if (is_null($colwidth)) {
         $replacement = '200px'; //Default width
@@ -931,7 +1045,14 @@ function zebra_set_colwidth($css, $colwidth) {
  * @param mixed $colwidth
  * @return string
  */
-function zebra_set_doublecolwidth($css, $colwidth) {
+function zebra_set_doublecolwidth($css, $theme) {
+
+    //Get double the width of the colums from colwidth
+    $colwidth = null;
+    if (!empty($theme->settings->colwidth)) {
+        $colwidth = $theme->settings->colwidth; //Integrate colwidth in this function
+    }
+
     $tag = '[[setting:doublecolwidth]]';
     if (is_null($colwidth)) { //Get the value from the settings page
         $colwidth = '200px'; //Default width
@@ -949,82 +1070,161 @@ function zebra_set_doublecolwidth($css, $colwidth) {
  * @param mixed $useautohide
  * @return string
  */
-function zebra_set_useautohide($css, $useautohide, $hovercolor) {
+function zebra_set_useautohide($css, $theme) {
+
+    //Get the autohide value from settings
+    $useautohide = null;
+    $hovercolor = null;
+    if (!empty($theme->settings->useautohide)) {
+        $useautohide = $theme->settings->useautohide;
+    }
+    if (!empty($theme->settings->hovercolor)) { //Integrate hovercolor in this function
+        $hovercolor = $theme->settings->hovercolor;
+    }
+
     $tag = '[[setting:useautohide]]';
-    if ($useautohide) { //Setting is "YES"
-        if (is_null($hovercolor)) { //Get the value from the settings page
-            $hovercolor = '#91979F';
+    if (is_null($hovercolor)) { //Get hovercolor from settings
+        $hovercolor = '#4E7BA3'; //Default color
+    }
+    $rules = '
+        .editing h3.sectionname {
+            margin: 0; /* Swap the margin for padding for the hover rules below */
+            padding: 1em 0;
         }
-        $rules = '
-            .editing h3.sectionname {
-                margin: 0; /* Swap the margin for padding for the hover rules below */
-                padding: 1em 0;
-            }
 
-            .editing .block_site_main_menu .urlselect select {
-                max-width: 86%; /* Keep the "Add Resources and Add Activity" Dropdowns in the block */
-            }
+        .editing .block_site_main_menu .urlselect select {
+            max-width: 86%; /* Keep the "Add Resources and Add Activity" Dropdowns in the block */
+        }
 
-            .editing .block .title .commands, /* Block Title Controls */
-            .editing .block .content li .commands, /* Command in block content */
-            .editing .block .editbutton,
-            .editing .block .section_add_menus, /* Add Resource/Activity dropdowns in blocks */
-            .editing .section .left a, /* Move Controls */
-            .editing .section .right a, /* Right Side Visibility Controls */
-            .editing .section .right div,
-            .editing .section .summary a[title~="Edit"], /* Edit Section Summary */
-            .editing .section .section_add_menus, /* Add Resource/Activity dropdowns */
-            .editing .section .activity .commands, /* Individual activity and resource controls */
-            .editing .sitetopic > .no-overflow + a,
-            .editing .sitetopic .section_add_menus /* Front Page Site Topic Add resource/activity dropdowns */ {
-                visibility: hidden;
-                filter: alpha(opacity=0);
-                opacity: 0;
-                -webkit-transition: opacity 0.5s linear 0s;
-                -moz-transition: opacity 0.5s linear 0s;
-                -ms-transition: opacity 0.5s linear 0s;
-                -o-transition: opacity 0.5s linear 0s;
-                transition: opacity 0.5s linear 0s; /* half-second fade in */
-            }
+        .editing .block .title .commands, /* Block Title Controls */
+        .editing .block .content li .commands, /* Command in block content */
+        .editing .block .editbutton,
+        .editing .block .section_add_menus, /* Add Resource/Activity dropdowns in blocks */
+        .editing .section .left a, /* Move Controls */
+        .editing .section .right a, /* Right Side Visibility Controls */
+        .editing .section .right div,
+        .editing .section .summary a, /* Edit Section Summary */
+        .editing .section .section_add_menus, /* Add Resource/Activity dropdowns */
+        .editing .section .activity .commands, /* Individual activity and resource controls */
+        .editing .sitetopic > .no-overflow + a,
+        .editing .sitetopic .section_add_menus /* Front Page Site Topic Add resource/activity dropdowns */ {
+            visibility: hidden;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            -webkit-transition: opacity 0.5s linear 0s;
+            -moz-transition: opacity 0.5s linear 0s;
+            -ms-transition: opacity 0.5s linear 0s;
+            -o-transition: opacity 0.5s linear 0s;
+            transition: opacity 0.5s linear 0s; /* half-second fade in */
+        }
 
-            .editing .block:hover .title .commands,
-            .editing .block .content li:hover .commands,
-            .editing .block:hover .editbutton,
-            .editing .block:hover .section_add_menus,
-            .editing .section:hover .left a,
-            .editing .section:hover .right a,
-            .editing .section:hover .right div,
-            .editing .section .summary:hover a,
-            .editing .section .sectionname:hover + .summary a,
-            .editing .section:hover .section_add_menus,
-            .editing .section .activity:hover .commands,
-            .editing .sitetopic:hover > .no-overflow + a,
-            .editing .sitetopic:hover .section_add_menus {
-                visibility: visible;
-                filter: none;
-                opacity: 1;
-            }
+        .editing .block:hover .title .commands,
+        .editing .block .content li:hover .commands,
+        .editing .block:hover .editbutton,
+        .editing .block:hover .section_add_menus,
+        .editing .section:hover .left a,
+        .editing .section:hover .right a,
+        .editing .section:hover .right div,
+        .editing .section .summary:hover a,
+        .editing .section .sectionname:hover + .summary a,
+        .editing .section:hover .section_add_menus,
+        .editing .section .activity:hover .commands,
+        .editing .sitetopic:hover > .no-overflow + a,
+        .editing .sitetopic:hover .section_add_menus {
+            visibility: visible;
+            filter: none;
+            opacity: 1;
+        }
 
-            .editing .block_site_main_menu .content .r0, /* Site Main Menu Resources/Activities */
-            .editing .block_site_main_menu .content .r1,
-            .editing .block_course_summary .no-overflow,
-            .editing .section .activity,
-            .editing .section .summary,
-            .editing .sitetopic > .no-overflow {
-                padding: 4px!important; /* Add some padding for the hover rules below, !important is necessary to override a rule from "Base" */
-                border: 1px dashed transparent; /* Transparent border to prevent items from moving when showing border */
-            }
+        .editing .block_site_main_menu .content .r0, /* Site Main Menu Resources/Activities */
+        .editing .block_site_main_menu .content .r1,
+        .editing .section .activity,
+        .editing .section .summary,
+        .editing .sitetopic > .no-overflow {
+            padding: 4px!important; /* Add some padding for the hover rules below, !important is necessary to override a rule from "Base" */
+            border: 1px dashed transparent; /* Transparent border to prevent items from moving when showing border */
+        }
 
-            .editing.can_edit .block_site_main_menu .content .r0:hover,
-            .editing.can_edit .block_site_main_menu .content .r1:hover,
-            .editing.can_edit .block_course_summary .no-overflow:hover,
-            .editing .section .activity:hover,
-            .editing .section .summary:hover,
-            .editing .section .sectionname:hover + .summary,
-            .editing.can_edit .sitetopic > .no-overflow:hover {
-                border-color: ' . $hovercolor . '; /* Change the border color around individual activities/resource/summaries */
-            }
-        ';
+        .editing .block_site_main_menu .content .r0:hover,
+        .editing .block_site_main_menu .content .r1:hover,
+        .editing .section .activity:hover,
+        .editing .section .summary:hover,
+        .editing .section .sectionname:hover + .summary,
+        .editing .sitetopic > .no-overflow:hover {
+            border-color: ' . $hovercolor . '; /* Change the border color around individual activities/resource/summaries */
+        }
+    ';
+    if ($useautohide) { //Setting is "YES"
+        $replacement = $rules;
+    } else { //Setting is "NO"
+        $replacement = null; //NULL so we don't actually output anything to the stylesheet
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+/**
+ * Displays the Editing Mode CSS based on settings value
+ *
+ * @param string $css
+ * @param mixed $editingnotify
+ * @return string
+ */
+function zebra_set_editingnotify($css, $theme) {
+    
+    //Get the editingnotify value from settings
+    $editingnotify = null;
+    $hovercolor = null;
+    $colorscheme = null;
+    if (!empty($theme->settings->editingnotify)) {
+        $editingnotify = $theme->settings->editingnotify;
+    }
+    if (!empty($theme->settings->hovercolor)) { //Integrate hovercolor in this function
+        $hovercolor = $theme->settings->hovercolor;
+    }
+    if (!empty($theme->settings->colorscheme)) { //Integrate colorscheme in this function
+        $colorscheme = $theme->settings->colorscheme;
+    }
+
+    $tag = '[[setting:editingnotify]]';
+    if (is_null($hovercolor)) { //Get hovercolor from settings
+        $hovercolor = '#4E7BA3'; //Default color
+    }
+    switch($colorscheme) { //Check the colorscheme value from settings
+        case 'dark':
+            $colorscheme = 'rgba(0, 0, 0, 0.08)'; //Black
+            break;
+
+        case 'light':
+            $colorscheme = 'rgba(255, 255, 255, 0.2)'; //White
+            break;
+
+        default:
+            $colorscheme = 'transparent';
+            break;
+    }
+    $rules = '
+        #add_block .select {
+            max-width: 100%; /* Keep the "Add Block" Select in the border */
+        }
+
+        .editing.path-course-view .content,
+        .editing.path-site .sitetopic,
+        .editing.path-site .content {
+            border: 2px dashed ' . $hovercolor . '; /* Add a border around the editable content */
+            box-shadow: 0 0 2px 2px ' . $colorscheme . '; /* Add a box-shadow around editable content */
+            padding: 4px;margin:4px;
+        }
+
+        .editing.path-course-view .section .content .section_add_menus,
+        .editing.path-site .sitetopic .section_add_menus,
+        .editing.path-site .block_site_main_menu .content .section_add_menus {
+            background-color: ' . $hovercolor . '; /* Add a background color the the "Add New..." Menus */
+            margin:0 -4px -4px;
+            padding:4px 4px 0 0;
+        }
+    ';
+    if ($editingnotify) { //Setting is "YES"
         $replacement = $rules;
     } else { //Setting is "NO"
         $replacement = null; //NULL so we don't actually output anything to the stylesheet
@@ -1041,7 +1241,14 @@ function zebra_set_useautohide($css, $useautohide, $hovercolor) {
  * @param mixed $customcss
  * @return string
  */
-function zebra_set_customcss($css, $customcss) {
+function zebra_set_customcss($css, $theme) {
+
+    //Get any extra css the user adds from settings
+    $customcss = null;
+    if(!empty($theme->settings->customcss)) {
+        $customcss = $theme->settings->customcss;
+    }
+
     $tag = '[[setting:customcss]]';
     $replacement = $customcss; //All the rules in the CSS box on the settings page
     $css = str_replace($tag, $replacement, $css);
