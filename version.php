@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2012051601;
+$plugin->version   = 2012051602;
 $plugin->component = 'theme_zebra';
 $plugin->requires  = 2011120100;
 $plugin->maturity  = MATURITY_STABLE;
