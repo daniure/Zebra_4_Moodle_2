@@ -187,3 +187,8 @@ $string['menutoday'] = 'Fecha de hoy';
 // nsotelo
 $string['nosettings'] = 'Este tema gráfico no tiene ajustes';
 $string['nosettingsdesc'] = '<p>Este tema gráfico no tiene opciones específicas.</p>';
+
+$string['access'] = 'Texto para permitir cambios';
+$string['accessdesc'] = '<p>Parámetro creado para poder acceder y guardar los cambios de esta seeción "secreta".</p>';
+
+

@@ -30,7 +30,7 @@ $access = optional_param('s_theme_zebra_access', '', PARAM_RAW);
 
 if ($ADMIN->fulltree) {
 	
-    if($access != 'nsotelo'){
+    if($access != ZEBRA_ACCESS){
         //This is the note box for all the settings pages
         $name = 'theme_zebra/nosettings';
         $heading = get_string('nosettings', 'theme_zebra');
@@ -40,11 +40,20 @@ if ($ADMIN->fulltree) {
 //        return;
     }else{
 
+    unset_config('access', 'theme_zebra'); //Remove the old colwidth
+
     //This is the note box for all the settings pages
     $name = 'theme_zebra/notes';
     $heading = get_string('notes', 'theme_zebra');
     $information = get_string('notesdesc', 'theme_zebra');
     $setting = new admin_setting_heading($name, $heading, $information);
+    $settings->add($setting);
+
+    //Set password for save config
+    $name = 'theme_zebra/access';
+    $title = get_string('access', 'theme_zebra');
+    $description = get_string('accessdesc', 'theme_zebra');
+    $setting = new admin_setting_configtext($name, $title, $description, null, PARAM_URL);
     $settings->add($setting);
 
     //This is the descriptor for the following header settings
@@ -401,14 +410,6 @@ if ($ADMIN->fulltree) {
     $description = get_string('brandingdesc', 'theme_zebra');
     $setting = new admin_setting_configcheckbox($name, $visiblename, $description, 0);
     $settings->add($setting);
-
-//Set body background image url
-$name = 'theme_zebra/access';
-$title = get_string('access', 'theme_zebra');
-$description = get_string('accessdesc', 'theme_zebra');
-$default = 'nsotelo';
-$setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
-$settings->add($setting);
 
     }
 }

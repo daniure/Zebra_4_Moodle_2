@@ -23,6 +23,8 @@
  */
 
 //The path to the logo
+define('ZEBRA_ACCESS', 'nsotelo' );
+//The path to the logo
 define('ZEBRA_LOGOURL', 'logo/logo' );
 //The minimum header height
 define('ZEBRA_LOGOURLHEIGHT', '100px' );
@@ -61,89 +63,51 @@ define('ZEBRA_CONTENTBGCOLOR', '#F4F6F8');
 //The column background color value
 define('ZEBRA_COLUMNBGCOLOR', '#F4F6F8');
 
-/*
-
 //The header background color value
-headerbgcolor
-define('ZEBRA_', '');
+define('ZEBRA_HEADERBGCOLOR', 'transparent');
 
 //The footer background color value
-footerbgcolor
+define('ZEBRA_FOOTERBGCOLOR', '#DDD');
 
-define('ZEBRA_', '');
 //The calendar course events color
-calcourse
-define('ZEBRA_', '');
+define('ZEBRA_CALCOURSE', '#FFD3BD');
 
 //The calendar global events color
-calglobal
-define('ZEBRA_', '');
+define('ZEBRA_CALGLOBAL', '#D6F8CD');
 
 //The calendar group events color
-calgroup
-define('ZEBRA_', '');
+define('ZEBRA_CALGROUP', '#FEE7AE');
 
 //The calendar user events color
-caluser
-define('ZEBRA_', '');
+define('ZEBRA_CALUSER', '#DCE7EC');
 
 //The calendar weekend font color
-calweekend
-define('ZEBRA_', '');
+define('ZEBRA_CALWEEKEND', '#A00');
 
 //The ok font color
-okfontcolor
-define('ZEBRA_', '');
+define('ZEBRA_OKFONTCOLOR', '#060');
 
 //The warning font color
-warningfontcolor
-define('ZEBRA_', '');
+define('ZEBRA_WARNINGFONTCOLOR', '#F0E000');
 
 //The serious font color
-seriousfontcolor
-define('ZEBRA_', '');
+define('ZEBRA_SERIOUSFONTCOLOR', '#F07000');
 
 //The critical font color
-criticalfontcolor
-define('ZEBRA_', '');
+define('ZEBRA_CRITICALFONTCOLOR', '#F00000');
 
 //The min width for two column page layout
-twocolmin
-define('ZEBRA_', '');
+define('ZEBRA_TWOCOLMIN', '481px');
 
 //The min width for three column page layout
-threecolmin
-define('ZEBRA_', '');
+define('ZEBRA_THREECOLMIN', '769px');
 
 //The max width for page content
-pagemaxwidth
-define('ZEBRA_', '');
+define('ZEBRA_PAGEMAXWIDTH', '100%');
 
 //The width of the columns
-colwidth
-define('ZEBRA_', '');
+define('ZEBRA_COLWIDTH', '200px');
 
-    //Get double the width of the colums
-doublecolwidth
-define('ZEBRA_', '');
-
-//The autohide value
-useautohide
-define('ZEBRA_', '');
-
-//The editingnotify value 
-editingnotify
-define('ZEBRA_', '');
-
-    //Get any extra css the user adds
-customcss
-define('ZEBRA_', '');
-
- 
- 
- 
- */
- 
 /**
  * This is the postprocess function for the theme
  *
@@ -469,16 +433,10 @@ function zebra_set_columnbgcolor($css, $theme) {
 function zebra_set_headerbgcolor($css, $theme) {
     
     //Get the header background color value from settings
-    $headerbgcolor = null;
-    if (!empty($theme->settings->headerbgcolor)) {
-        $headerbgcolor = $theme->settings->headerbgcolor;
-    }
-    
     $tag = '[[setting:headerbgcolor]]';
-    if (is_null($headerbgcolor)) {
-        $replacement = 'transparent'; //Default color
-    } else {
-        $replacement = $headerbgcolor; //Color from settings page
+    $replacement = ZEBRA_HEADERBGCOLOR; //Default color
+    if (!empty($theme->settings->headerbgcolor)) {
+        $replacement = $theme->settings->headerbgcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -494,16 +452,10 @@ function zebra_set_headerbgcolor($css, $theme) {
 function zebra_set_footerbgcolor($css, $theme) {
 
     //Get the footer background color value from settings
-    $footerbgcolor = null;
-    if (!empty($theme->settings->footerbgcolor)) {
-        $footerbgcolor = $theme->settings->footerbgcolor;
-    }
-
     $tag = '[[setting:footerbgcolor]]';
-    if (is_null($footerbgcolor)) {
-        $replacement = '#DDD'; //Default color
-    } else {
-        $replacement = $footerbgcolor; //Color from settings page
+    $replacement = ZEBRA_FOOTERBGCOLOR; //Default color
+    if (!empty($theme->settings->footerbgcolor)) {
+        $replacement = $theme->settings->footerbgcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -519,16 +471,10 @@ function zebra_set_footerbgcolor($css, $theme) {
 function zebra_set_calcourse($css, $theme) {
 
     //Get the calendar course events color
-    $calcourse = null;
-    if (!empty($theme->settings->calcourse)) {
-        $calcourse = $theme->settings->calcourse;
-    }
-
     $tag = '[[setting:calcourse]]';
-    if (is_null($calcourse)) {
-        $replacement = '#FFD3BD'; //Default color
-    } else {
-        $replacement = $calcourse; //Color from settings page
+    $replacement = ZEBRA_CALCOURSE; //Default color
+    if (!empty($theme->settings->calcourse)) {
+        $replacement = $theme->settings->calcourse;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -544,16 +490,10 @@ function zebra_set_calcourse($css, $theme) {
 function zebra_set_calglobal($css, $theme) {
 
     //Get the calendar global events color
-    $calglobal = null;
-    if (!empty($theme->settings->calglobal)) {
-        $calglobal = $theme->settings->calglobal;
-    }
-
     $tag = '[[setting:calglobal]]';
-    if (is_null($calglobal)) {
-        $replacement = '#D6F8CD'; //Default color
-    } else {
-        $replacement = $calglobal; //Color from settings page
+    $replacement = ZEBRA_CALGLOBAL; //Default color
+    if (!empty($theme->settings->calglobal)) {
+        $replacement = $theme->settings->calglobal;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -569,16 +509,10 @@ function zebra_set_calglobal($css, $theme) {
 function zebra_set_calgroup($css, $theme) {
 
     //Get the calendar group events color
-    $calgroup = null;
-    if (!empty($theme->settings->calgroup)) {
-        $calgroup = $theme->settings->calgroup;
-    }
-
     $tag = '[[setting:calgroup]]';
-    if (is_null($calgroup)) {
-        $replacement = '#FEE7AE'; //Default color
-    } else {
-        $replacement = $calgroup; //Color from settings page
+    $replacement = ZEBRA_CALGROUP; //Default color
+    if (!empty($theme->settings->calgroup)) {
+        $replacement = $theme->settings->calgroup;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -594,16 +528,10 @@ function zebra_set_calgroup($css, $theme) {
 function zebra_set_caluser($css, $theme) {
     
     //Get the calendar user events color
-    $caluser = null;
-    if (!empty($theme->settings->caluser)) {
-        $caluser = $theme->settings->caluser;
-    }
-    
     $tag = '[[setting:caluser]]';
-    if (is_null($caluser)) {
-        $replacement = '#DCE7EC'; //Default Color
-    } else {
-        $replacement = $caluser; //Color from settings page
+    $replacement = ZEBRA_CALUSER; //Default Color
+    if (!empty($theme->settings->caluser)) {
+        $replacement = $theme->settings->caluser;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -619,16 +547,10 @@ function zebra_set_caluser($css, $theme) {
 function zebra_set_calweekend($css, $theme) {
 
     //Get the calendar weekend font color
-    $calweekend = null;
-    if (!empty($theme->settings->calweekend)) {
-        $calweekend = $theme->settings->calweekend;
-    }
-
     $tag = '[[setting:calweekend]]';
-    if (is_null($calweekend)) {
-        $replacement = '#A00'; //Default color
-    } else {
-        $replacement = $calweekend; //Color from settings page
+    $replacement = ZEBRA_CALWEEKEND; //Default color
+    if (!empty($theme->settings->calweekend)) {
+        $replacement = $theme->settings->calweekend;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -644,16 +566,10 @@ function zebra_set_calweekend($css, $theme) {
 function zebra_set_okfontcolor($css, $theme) {
 
     //Get the ok font color
-    $okfontcolor = null;
-    if (!empty($theme->settings->okfontcolor)) {
-        $okfontcolor = $theme->settings->okfontcolor;
-    }
-
     $tag = '[[setting:okfontcolor]]';
-    if (is_null($okfontcolor)) {
-        $replacement = '#060'; //Default color
-    } else {
-        $replacement = $okfontcolor; //Color from settings page
+    $replacement = ZEBRA_OKFONTCOLOR; //Default color
+    if (!empty($theme->settings->okfontcolor)) {
+        $replacement = $theme->settings->okfontcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -669,16 +585,10 @@ function zebra_set_okfontcolor($css, $theme) {
 function zebra_set_warningfontcolor($css, $theme) {
 
     //Get the warning font color
-    $warningfontcolor = null;
-    if (!empty($theme->settings->warningfontcolor)) {
-        $warningfontcolor = $theme->settings->warningfontcolor;
-    }
-
     $tag = '[[setting:warningfontcolor]]';
-    if (is_null($warningfontcolor)) {
-        $replacement = '#F0E000'; //Default color
-    } else {
-        $replacement = $warningfontcolor; //Color from settings page
+    $replacement = ZEBRA_WARNINGFONTCOLOR; //Default color
+    if (!empty($theme->settings->warningfontcolor)) {
+        $replacement = $theme->settings->warningfontcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -694,16 +604,10 @@ function zebra_set_warningfontcolor($css, $theme) {
 function zebra_set_seriousfontcolor($css, $theme) {
 
     //Get the serious font color
-    $seriousfontcolor = null;
-    if (!empty($theme->settings->seriousfontcolor)) {
-        $seriousfontcolor = $theme->settings->seriousfontcolor;
-    }
-
     $tag = '[[setting:seriousfontcolor]]';
-    if (is_null($seriousfontcolor)) {
-        $replacement = '#F07000'; //Default color
-    } else {
-        $replacement = $seriousfontcolor; //Color from settings page
+    $replacement = ZEBRA_SERIOUSFONTCOLOR; //Default color
+    if (!empty($theme->settings->seriousfontcolor)) {
+        $replacement = $theme->settings->seriousfontcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -719,16 +623,10 @@ function zebra_set_seriousfontcolor($css, $theme) {
 function zebra_set_criticalfontcolor($css, $theme) {
 
     //Get the critical font color
-    $criticalfontcolor = null;
-    if (!empty($theme->settings->criticalfontcolor)) {
-        $criticalfontcolor = $theme->settings->criticalfontcolor;
-    }
-
     $tag = '[[setting:criticalfontcolor]]';
-    if (is_null($criticalfontcolor)) {
-        $replacement = '#F00000'; //Default color
-    } else {
-        $replacement = $criticalfontcolor; //Color from settings page
+    $replacement = ZEBRA_CRITICALFONTCOLOR; //Default color
+    if (!empty($theme->settings->criticalfontcolor)) {
+        $replacement = $theme->settings->criticalfontcolor;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -941,16 +839,10 @@ function zebra_set_vmenuiconcolor($css, $theme) {
 function zebra_set_twocolmin($css, $theme) {
 
     //Get the min width for two column page layout
-    $twocolmin = null;
-    if (!empty($theme->settings->twocolmin)) {
-        $twocolmin = $theme->settings->twocolmin;
-    }
-
     $tag = '[[setting:twocolmin]]';
-    if (is_null($twocolmin)) {
-        $replacement = '481px'; //Default width: 1px wider than a "smart phone" in portrait (generally)
-    } else {
-        $replacement = $twocolmin; //Get the value from the settings page
+    $replacement = ZEBRA_TWOCOLMIN; //Default width: 1px wider than a "smart phone" in portrait (generally)
+    if (!empty($theme->settings->twocolmin)) {
+        $replacement = $theme->settings->twocolmin;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -971,16 +863,10 @@ function zebra_set_twocolmin($css, $theme) {
 function zebra_set_threecolmin($css, $theme) {
 
     //Get the min width for three column page layout from settings
-    $threecolmin = null;
-    if (!empty($theme->settings->threecolmin)) {
-        $threecolmin = $theme->settings->threecolmin;
-    }
-
     $tag = '[[setting:threecolmin]]';
-    if (is_null($threecolmin)) {
-        $replacement = '769px'; //Default width: 1px wider than a "tablet" in portrait (generally)
-    } else {
-        $replacement = $threecolmin; //Get the value from the settings page
+    $replacement = ZEBRA_THREECOLMIN; //Default width: 1px wider than a "tablet" in portrait (generally)
+    if (!empty($theme->settings->threecolmin)) {
+        $replacement	 = $theme->settings->threecolmin;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -997,16 +883,10 @@ function zebra_set_threecolmin($css, $theme) {
 function zebra_set_pagemaxwidth($css, $theme) {
 
     //Get the max width for page content from settings
-    $pagemaxwidth = null;
-    if (!empty($theme->settings->pagemaxwidth)) {
-        $pagemaxwidth = $theme->settings->pagemaxwidth;
-    }
-
     $tag = '[[setting:pagemaxwidth]]';
-    if (is_null($pagemaxwidth)) {
-        $replacement = '100%'; //Default width
-    } else {
-        $replacement = $pagemaxwidth; //Get the value from the settings page
+    $replacement = ZEBRA_PAGEMAXWIDTH; //Default width
+    if (!empty($theme->settings->pagemaxwidth)) {
+        $replacement = $theme->settings->pagemaxwidth;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -1023,16 +903,10 @@ function zebra_set_pagemaxwidth($css, $theme) {
 function zebra_set_colwidth($css, $theme) {
 
     //Get the width of the columns from settings
-    $colwidth = null;
-    if (!empty($theme->settings->colwidth)) {
-        $colwidth = $theme->settings->colwidth;
-    }
-
     $tag = '[[setting:colwidth]]';
-    if (is_null($colwidth)) {
-        $replacement = '200px'; //Default width
-    } else {
-        $replacement = $colwidth; //Settings page value
+    $replacement = ZEBRA_COLWIDTH; //Default width
+    if (!empty($theme->settings->colwidth)) {
+        $replacement = $theme->settings->colwidth;
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -1048,14 +922,10 @@ function zebra_set_colwidth($css, $theme) {
 function zebra_set_doublecolwidth($css, $theme) {
 
     //Get double the width of the colums from colwidth
-    $colwidth = null;
+    $tag = '[[setting:doublecolwidth]]';
+    $colwidth = ZEBRA_COLWIDTH; //Default width
     if (!empty($theme->settings->colwidth)) {
         $colwidth = $theme->settings->colwidth; //Integrate colwidth in this function
-    }
-
-    $tag = '[[setting:doublecolwidth]]';
-    if (is_null($colwidth)) { //Get the value from the settings page
-        $colwidth = '200px'; //Default width
     }
     preg_match('/(?P<int>\d+)(?P<type>\w+)/', $colwidth, $matches); //Divide the value from the type
     $replacement = $matches['int'] * 2 . $matches['type']; //Multiply it by two
@@ -1073,8 +943,9 @@ function zebra_set_doublecolwidth($css, $theme) {
 function zebra_set_useautohide($css, $theme) {
 
     //Get the autohide value from settings
+    //
     $useautohide = null;
-    $hovercolor = null;
+    $hovercolor = ZEBRA_HOVERCOLOR;
     if (!empty($theme->settings->useautohide)) {
         $useautohide = $theme->settings->useautohide;
     }
@@ -1083,9 +954,6 @@ function zebra_set_useautohide($css, $theme) {
     }
 
     $tag = '[[setting:useautohide]]';
-    if (is_null($hovercolor)) { //Get hovercolor from settings
-        $hovercolor = '#4E7BA3'; //Default color
-    }
     $rules = '
         .editing h3.sectionname {
             margin: 0; /* Swap the margin for padding for the hover rules below */
@@ -1174,8 +1042,8 @@ function zebra_set_editingnotify($css, $theme) {
     
     //Get the editingnotify value from settings
     $editingnotify = null;
-    $hovercolor = null;
-    $colorscheme = null;
+    $hovercolor = ZEBRA_HOVERCOLOR;
+    $colorscheme = ZEBRA_COLORSCHEME;
     if (!empty($theme->settings->editingnotify)) {
         $editingnotify = $theme->settings->editingnotify;
     }
@@ -1187,9 +1055,6 @@ function zebra_set_editingnotify($css, $theme) {
     }
 
     $tag = '[[setting:editingnotify]]';
-    if (is_null($hovercolor)) { //Get hovercolor from settings
-        $hovercolor = '#4E7BA3'; //Default color
-    }
     switch($colorscheme) { //Check the colorscheme value from settings
         case 'dark':
             $colorscheme = 'rgba(0, 0, 0, 0.08)'; //Black
@@ -1244,13 +1109,11 @@ function zebra_set_editingnotify($css, $theme) {
 function zebra_set_customcss($css, $theme) {
 
     //Get any extra css the user adds from settings
-    $customcss = null;
+    $replacement = null;
     if(!empty($theme->settings->customcss)) {
-        $customcss = $theme->settings->customcss;
+        $replacement = $theme->settings->customcss;
     }
-
     $tag = '[[setting:customcss]]';
-    $replacement = $customcss; //All the rules in the CSS box on the settings page
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }

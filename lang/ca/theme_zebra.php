@@ -56,68 +56,68 @@ $string['choosereadme'] = '<div class="clearfix">
 </div>
 ';
 
-$string['region-side-post'] = 'Right';
-$string['region-side-pre'] = 'Left';
+$string['region-side-post'] = 'Derecha';
+$string['region-side-pre'] = 'Izquierda';
 
-$string['notes'] = 'Theme notes';
-$string['notesdesc'] = '<p>To apply any settings simply press "Save Changes" at the bottom of this page.</p><p>If you do not have Theme Designer Mode enabled you may need to visit the <a href="purgecaches.php">Purge All Caches</a> admin page to force the refresh.</p>';
+$string['notes'] = 'Notas del tema';
+$string['notesdesc'] = '<p>Para aplicar las configuraciones no olvides clicar el botón "Guardar cambios" situado al final de ésta página</p><p> Si no tienes el "Modo de Diseño de temas" habilitado necesitarás ir a <a href="purgecaches.php">y clicar "Borrar caché de temas"</a> situado en el menú de administrador y refrescar.</p>';
 
-$string['headerinfo'] = 'Header settings';
-$string['headerinfodesc'] = '<p>Change the settings for the header region.</p>';
+$string['headerinfo'] = 'Ajustes de la cabecera';
+$string['headerinfodesc'] = '<p>Cambia los ajustes de la región de cabecera.</p>';
 
 $string['logourl'] = 'Logo URL';
-$string['logourldesc'] = '<p>Input the URL to your logo.</p><p>This can be used in one of three protocol types:<ul><li><p>Moodle Output (relative to theme):</p><p><code>logo/companylogo</code></p></li><li><p>Full path:</p><p><code>http://domain.com/theme/image.php?theme=zebra&image=logo&rev=1&component=theme</code><br /><code>http://domain.com/path/to/image.jpg</code></p></li><li><p>Relative Path:</p><p><code>/path/to/file/companylogo.png</code></p></li></ul></p>';
-$string['logourlheight'] = 'Logo image height';
-$string['logourlheightdesc'] = '<p>Minimum height for header to provide space for logo image.</p><p>If you do not have a logo you should still leave this at the default to provide space for the profile block.</p>';
-$string['backgroundurl'] = 'Background URL';
-$string['backgroundurldesc'] = '<p>Input the URL to your body background image.</p><p>This can be used in Moodle Output format (relative to theme), full path, or relative path.</p>';
+$string['logourldesc'] = '<p>Introduce la URL dónde esté la imagen de tu logo.</p><p>Puede ser usado con uno de éstos tres protocolos:<ul><li><p>Salida de Moodle (en relación con el tema):</p><p><code>logo/companylogo</code></p></li><li><p>Ruta completa:</p><p><code>http://domain.com/theme/image.php?theme=zebra&image=logo&rev=1&component=theme</code><br /><code>http://domain.com/path/to/image.jpg</code></p></li><li><p>Ruta relativa:</p><p><code>/path/to/file/companylogo.png</code></p></li></ul></p>';
+$string['logourlheight'] = 'Altura del logo';
+$string['logourlheightdesc'] = '<p>Altura mínima para el logo de cabecera.</p><p>Si no dispones de logo todavía mantén la altura por defecto para dejar espacio al bloque de perfil.</p>';
+$string['backgroundurl'] = 'URL de la imagen de fondo';
+$string['backgroundurldesc'] = '<p>Introduce la URL de la imagen que quieras poner como fondo en la parte central del Campus.</p><p>Dispones de las opciones Salida de Moodle, Ruta de acceso completa o Ruta relativa.</p>';
 
-$string['headeralt'] = 'Alternate text';
-$string['headeraltdesc'] = '<p>Text to use instead of the Site Name.</p><p>Hint: Use a space (<code>&amp;nbsp;</code>) to display nothing.</p>';
+$string['headeralt'] = 'Texto alternativo';
+$string['headeraltdesc'] = '<p>Texto que se usará en lugar del logo en la Página de inicio del Campus.</p><p>Sugerencia: Utilice un espacio (<code>&amp;nbsp;</code>) si no se ha de mostrar nada.</p>';
 
-$string['homeicon'] = 'Show home icon';
-$string['homeicondesc'] = '<p>Show the home icon at the beginning of the custom menu.</p>';
-$string['callink'] = 'Calendar link';
-$string['callinkdesc'] = '<p>Show the date with a link to the calendar at the end of the custom menu.</p>';
-$string['dateformat'] = 'Date format';
-$string['dateformatdesc'] = '<p>Note: This requires <a href="#admin-callink"><code>callink</code></a> to be enabled.</p><p>Set a format for displaying the date in the custom menu.  For more information on the date() function please see the php.net docs <a href="http://php.net/manual/en/function.date.php" title="PHP: date - Manual">here</a>.</p>';
+$string['homeicon'] = 'Mostrar icono de página de Inicio (Home)';
+$string['homeicondesc'] = '<p>Muestra el icono de página de Inicio (Home) al principio del Menú personalizado (Custom Menu).</p>';
+$string['callink'] = 'Enlace a Calendario';
+$string['callinkdesc'] = '<p>Muestra la fecha con un enlace al Calendario al final del Menú personalizado (Cuestom Menu).</p>';
+$string['dateformat'] = 'Formato de fecha';
+$string['dateformatdesc'] = '<p>Nota: Requiere que el <a href="#admin-callink"><code>Enlace a Calendario</code></a> esté habilitado.</p><p>Establece un formato para visualizar la fecha en el Menú personalizado (Custom Menu). Para más información acerca de la función "date()" por favor consulta la documentación de php.net<a href="http://php.net/manual/en/function.date.php" title="PHP: Manual fecha">here</a>.</p>';
 
-$string['userpic'] = 'Show user picture';
-$string['userpicdesc'] = '<p>Show the user\'s profile picture in the header</p>';
+$string['userpic'] = 'Muestra imágen del perfil de usuario';
+$string['userpicdesc'] = '<p>Muestra la fotografía de los usuarios en la cabecera</p>';
 
-$string['colorsinfo'] = 'General colors settings';
-$string['colorsinfodesc'] = '<p>Change the settings for the colors of the page.</p><p>You can use any valid color type like <code>red</code>, <code>#FF0000</code>, <code>rgb(0, 255, 255)</code>, or <code>rgba(0, 255, 255, 1.0)</code>.</p>';
+$string['colorsinfo'] = 'Ajustes generales de color';
+$string['colorsinfodesc'] = '<p>Cambia los ajustes de los colores de la página.</p><p>Puedes introducir el color en los siguientes formatos <code>red</code>, <code>#FF0000</code>, <code>rgb(0, 255, 255)</code>, o <code>rgba(0, 255, 255, 1.0)</code>.</p>';
 
-$string['bodybgcolor'] = 'Body background color';
-$string['bodybgcolordesc'] = '<p>Main background color of the page.</p><p>This is applied to the <code>&lt;body&gt;</code> tag.</p>';
-$string['linkcolor'] = 'Links color';
-$string['linkcolordesc'] = '<p>Links and menu color.</p><p>This is applied to all links (in and out of page content) except the custommenu and the custommenu background with the exception of the "date".</p>';
-$string['hovercolor'] = 'Hover color';
-$string['hovercolordesc'] = '<p>Hovering color.</p><p>This is applied to all links (in and out of the page content) and the custommenu.</p>';
-$string['fontcolor'] = 'Font color';
-$string['fontcolordesc'] = '<p>Primary font and label color.</p><p>This is applied to all labels and fonts that do not have a specific class that overrides the color like <code>.warning</code> or <code>.notifysuccess</code>.  This is also applied to the background color of the "date" on the custommenu.</p>';
-$string['contentbgcolor'] = 'Page background color';
-$string['contentbgcolordesc'] = '<p>Content background color.</p><p>This is applied to different elements depending on the current view (please see pagelayout.css for more details) but generally this is the content of the page.  This is also applied to the custommenu links color.</p>';
-$string['columnbgcolor'] = 'Columns background color';
-$string['columnbgcolordesc'] = '<p>Column(s) background color.</p><p>This is applied to different elements depending on the current view (please see pagelayout.css for more details) but generally this is the region-pre and region-post (a.k.a. block areas).</p>';
-$string['headerbgcolor'] = 'Header background color';
-$string['headerbgcolordesc'] = '<p>Header background color.</p>';
-$string['footerbgcolor'] = 'Footer background color';
-$string['footerbgcolordesc'] = '<p>Footer background color.</p><p>Using <code>transparent</code> will cause the footer to display the value of <code>contentbgcolor</code> not <code>bodybgcolor</code>.  This should be set to the same value as <code>bodybgcolor</code> for a transparent effect.</p>';
+$string['bodybgcolor'] = 'Color de fondo central';
+$string['bodybgcolordesc'] = '<p>Color de fondo de la página, a excepción de la cabecera y el pie.</p><p>Se aplica con la etiqueta <code>&lt;body&gt;</code> tag.</p>';
+$string['linkcolor'] = 'Color de los enlaces';
+$string['linkcolordesc'] = '<p>Color de los enlaces y los menús.</p><p>Se aplica en todos los enlaces (dentro y fuera de los contenidos de las páginas) excepto en el Menú personalizado y el fondo del Menú personalizado (Custom menu) con excepción de la fecha.</p>';
+$string['hovercolor'] = 'Color al pasar por encima el ratón (Hover)';
+$string['hovercolordesc'] = '<p>Color al pasar por encima el ratón (Hover).</p><p>Se aplica en todos los enlaces (dentro y fuera de la página de contenidos) y el Menú personalizado (Custom menu).</p>';
+$string['fontcolor'] = 'Color del texto';
+$string['fontcolordesc'] = '<p>Color primario del texto y las etiquetas.</p><p>Se aplica en todas la etiquetas y textos que no tengan un color específico definido como <code>.warning</code> or <code>.notifysuccess</code>. También se aplica en el color de fondo de la fecha del Menú personalizado (Custom menu).</p>';
+$string['contentbgcolor'] = 'Color de fondo de la página';
+$string['contentbgcolordesc'] = '<p>Color de fondo de la página.</p><p>Se aplica a diferentes elementos dependiendo de la vista donde te encuentres (visita la CSS pagelayout.css para más detalles) pero generalmente se refiere a las páginas de contenidos. También se aplica en los enlaces del Menú personalizado (Custom menu).</p>';
+$string['columnbgcolor'] = 'Color de fondo de las columnas';
+$string['columnbgcolordesc'] = '<p>Color de fondo de las columnas.</p><p>Se aplica a diferentes elementos dependiendo de la vista donde te encuentres (visita la CSS pagelayout.css para más detalles) pero generalmente es la region-pre y la region-post (block areas).</p>';
+$string['headerbgcolor'] = 'Color de fondo de la cabecera';
+$string['headerbgcolordesc'] = '<p>Color de fondo de la cabecera.</p>';
+$string['footerbgcolor'] = 'Color de fondo del pie';
+$string['footerbgcolordesc'] = '<p>Color de fondo del pie.</p><p>Usando <code>transparent</code> puedes hacer que muestre el mismo color que el definido en el color de fondo de la parte central. Si usas <code>contentbgcolor</code> no verás el <code>bodybgcolor</code>.  Se debe establecer el mismo valor en <code>bodybgcolor</code> para conseguir un efecto transparente.</p>';
 
-$string['moodlecolorsinfo'] = 'Moodle colors settings';
-$string['moodlecolorsinfodesc'] = '<p>Change specific colors that are defined in the Moodle core and are outside of the general colors defined above.  These include things like <code>.notifysuccess</code> and calendar event type colors.  These probably do not need to be adjusted unless you have a specific conflict with the general color settings above.</p>';
+$string['moodlecolorsinfo'] = 'Otros ajustes de color Moodle';
+$string['moodlecolorsinfodesc'] = '<p>Cambia todos aquellos colores no incluídos en los ajustes específicos definidos anteriormente. Incluye aspectos como <code>.notifysuccess</code> y los colores de los evento de calendario. Probablemente no necesitarás ajustarlo salvo que tengas alguna incompatibilidad por el uso de algún color específico definido anteriormente.</p>';
 
-$string['calcourse'] = 'Calendar course events';
-$string['calcoursedesc'] = '<p>Sets the color used to represent course events in the calendar.</p>';
-$string['calglobal'] = 'Calendar global events';
-$string['calglobaldesc'] = '<p>Sets the color used to represent global events in the calendar.</p>';
-$string['calgroup'] = 'Calendar group events';
-$string['calgroupdesc'] = '<p>Sets the color used to represent group events in the calendar.</p>';
-$string['caluser'] = 'Calendar user events';
-$string['caluserdesc'] = '<p>Sets the color used to represent user events in the calendar.</p>';
-$string['calweekend'] = 'Calendar weekend color';
-$string['calweekenddesc'] = '<p>Sets the font color used for weekends on the calendar.</p>';
+$string['calcourse'] = 'Calendario: Eventos de curso';
+$string['calcoursedesc'] = '<p>Establece el color en los eventos de curso.</p>';
+$string['calglobal'] = 'Calendario: Eventos globales';
+$string['calglobaldesc'] = '<p>Establece el color en los eventos globales.</p>';
+$string['calgroup'] = 'Calendario: Eventos de grupo';
+$string['calgroupdesc'] = '<p>Establece el color en los eventos de grupo.</p>';
+$string['caluser'] = 'Calendario: Eventos de usuario';
+$string['caluserdesc'] = '<p>Establece el color en los eventos de usuario.</p>';
+$string['calweekend'] = 'Calendario: Fin de semana';
+$string['calweekenddesc'] = '<p>Establece el color usado en los fines de semana del Calendario.</p>';
 $string['okfontcolor'] = 'OK/Good font color';
 $string['okfontcolordesc'] = '<p>Sets the font color used for things that worked like saving settings, etc...  Specific examples are <code>.green</code> and <code>.notifysuccess</code>.</p>';
 $string['warningfontcolor'] = 'Warning font color';
@@ -174,16 +174,21 @@ $string['editingnotifydesc'] = '<p>This is a complementary series of rules for <
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = '<p>Input any custom CSS here.</p><p>CSS input here is the very last thing called on the page and should not be overwritten by any other rules.  If your rules are not displaying please try the following:<ol><li>check your syntax</li><li>add <code>!important</code> to your rule</li><li>manually append the rule to extra.css</li></ol></p>';
 
-$string['enablezoom'] = 'Enable page zoom';
-$string['enablezoomdesc'] = '<p>Enable page zooming for mobile devices.</p>';
+$string['enablezoom'] = 'Habilitar página de zoom';
+$string['enablezoomdesc'] = '<p>Habilitar página de zooming para dispósitivos.</p>';
 
-$string['branding'] = 'Hide footer logos';
-$string['brandingdesc'] = '<p>Hide the branded logos in the footer.</p><p>These links are to sites that either sponsored or contributed directly to development of this theme.  Full credits can be found in the readme when selecting this theme.</p>';
+$string['branding'] = 'Mostrar logos en el pie';
+$string['brandingdesc'] = '<p>Ocultar los ^branded^ logos en el pie.</p><p>Son enlaces a los sitios que han contribuido o patrocinado directamente en el desarollo de este tema gráfico. Los créditos completos pueden encontrarse al seleccionar este tema gráfico.</p>';
 
-$string['menuhome'] = 'Home';
-$string['menumyhome'] = 'My Home';
-$string['menutoday'] = 'Today\'s date';
+$string['menuhome'] = 'Página principal';
+$string['menumyhome'] = 'Mi página de inicio';
+$string['menutoday'] = 'Fecha de hoy';
 
 // nsotelo
-$string['nosettings'] = 'Theme not have settings';
+$string['nosettings'] = 'Este tema gráfico no tiene ajustes';
 $string['nosettingsdesc'] = '<p>Este tema gráfico no tiene opciones específicas.</p>';
+
+$string['access'] = 'Texto para permitir cambios';
+$string['accessdesc'] = '<p>Parámetro creado para poder acceder y guardar los cambios de esta seeción "secreta".</p>';
+
+

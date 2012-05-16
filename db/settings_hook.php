@@ -27,19 +27,46 @@ defined('MOODLE_INTERNAL') || die();
 global $CFG, $DB;
 $dbman = $DB->get_manager();
 
+
+//SOLO DEFINIREMOS LAS DEFAUTS NECESARIAS PARA NO TENER ERRORES EN EL SISTEMA
+
 $currentsetting = get_config('theme_zebra');
 
-if(empty($currentsetting->logourl)){
-    // Create logourl
-    set_config('logourl', ZEBRA_LOGOURL, 'theme_zebra');
+if(empty($currentsetting->simplelogin)){
+    // Create simplelogin
+    set_config('simplelogin', '', 'theme_zebra');
 }
-if(empty($currentsetting->logourlheight)){
-    // Create logourlheight
-    set_config('logourlheight', ZEBRA_LOGOURLHEIGHT, 'theme_zebra');
+if(empty($currentsetting->homeicon)){
+    // Create homeicon
+    set_config('homeicon', 1, 'theme_zebra');
 }
-if(empty($currentsetting->backgroundurl)){
-    // Create backgroundurl
-    set_config('backgroundurl', ZEBRA_BACKGROUNDURL, 'theme_zebra');
+if(empty($currentsetting->callink)){
+    // Create callink
+    set_config('callink', 1, 'theme_zebra');
+}
+if(empty($currentsetting->dateformat)){
+    // Create dateformat
+    set_config('dateformat', 'F j, Y', 'theme_zebra');
+}
+if(empty($currentsetting->userpic)){
+    // Create userpic
+    set_config('userpic', 1, 'theme_zebra');
+}
+if(empty($currentsetting->branding)){
+    // Create branding
+    set_config('branding', 0, 'theme_zebra');
+}
+if(empty($currentsetting->userespond)){
+    // Create userespond
+    set_config('userespond', 0, 'theme_zebra');
+}
+if(empty($currentsetting->usecf)){
+    // Create usecf
+    set_config('usecf', 0, 'theme_zebra');
+}
+if(empty($currentsetting->cfmaxversion)){
+    // Create cfmaxversion
+    set_config('cfmaxversion', 1, 'theme_zebra');
 }
 
 
