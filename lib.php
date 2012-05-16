@@ -108,6 +108,9 @@ define('ZEBRA_PAGEMAXWIDTH', '100%');
 //The width of the columns
 define('ZEBRA_COLWIDTH', '200px');
 
+//The date format
+define('ZEBRA_DATEFORMAT', 'F j, Y');
+
 /**
  * This is the postprocess function for the theme
  *
@@ -223,7 +226,7 @@ function zebra_process_css($css, $theme) {
  * Sets the logo url for the header
  *
  * @param string $css
- * @param mixed $logourl
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_logourl($css, $theme) {
@@ -257,7 +260,7 @@ function zebra_set_logourl($css, $theme) {
  * Sets the minimum height for the header
  *
  * @param string $css
- * @param mixed $logourlheight
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_logourlheight($css, $theme) {
@@ -279,7 +282,7 @@ function zebra_set_logourlheight($css, $theme) {
  * Sets the body background image url
  *
  * @param string $css
- * @param mixed $backgroundurl
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_backgroundurl($css, $theme) {
@@ -313,7 +316,7 @@ function zebra_set_backgroundurl($css, $theme) {
  * Sets the primary background color used for body
  *
  * @param string $css
- * @param mixed $bodybgcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_bodybgcolor($css, $theme) {
@@ -332,7 +335,7 @@ function zebra_set_bodybgcolor($css, $theme) {
  * Sets the color used for custommenu and links
  *
  * @param string $css
- * @param mixed $linkcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_linkcolor($css, $theme) {
@@ -351,7 +354,7 @@ function zebra_set_linkcolor($css, $theme) {
  * Sets the color used for hovering
  *
  * @param string $css
- * @param mixed $hovercolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_hovercolor($css, $theme) {
@@ -370,7 +373,7 @@ function zebra_set_hovercolor($css, $theme) {
  * Sets the color used for font color
  *
  * @param string $css
- * @param mixed $fontcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_fontcolor($css, $theme) {
@@ -389,7 +392,7 @@ function zebra_set_fontcolor($css, $theme) {
  * Sets the color used for main content background
  *
  * @param string $css
- * @param mixed $contentbgcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_contentbgcolor($css, $theme) {
@@ -408,7 +411,7 @@ function zebra_set_contentbgcolor($css, $theme) {
  * Sets the color used for columns (region-pre, region-post) background
  *
  * @param string $css
- * @param mixed $columnbgcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_columnbgcolor($css, $theme) {
@@ -427,7 +430,7 @@ function zebra_set_columnbgcolor($css, $theme) {
  * Sets the color used for the page-header background
  *
  * @param string $css
- * @param mixed $headerbgcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_headerbgcolor($css, $theme) {
@@ -446,7 +449,7 @@ function zebra_set_headerbgcolor($css, $theme) {
  * Sets the color used for the page-footer background
  *
  * @param string $css
- * @param mixed $footerbgcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_footerbgcolor($css, $theme) {
@@ -465,7 +468,7 @@ function zebra_set_footerbgcolor($css, $theme) {
  * Sets the color used for course calendar events
  *
  * @param string $css
- * @param mixed $calcourse
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_calcourse($css, $theme) {
@@ -484,7 +487,7 @@ function zebra_set_calcourse($css, $theme) {
  * Sets the color used for global calendar events
  *
  * @param string $css
- * @param mixed $calglobal
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_calglobal($css, $theme) {
@@ -503,7 +506,7 @@ function zebra_set_calglobal($css, $theme) {
  * Sets the color used for group calendar events
  *
  * @param string $css
- * @param mixed $calgroup
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_calgroup($css, $theme) {
@@ -522,7 +525,7 @@ function zebra_set_calgroup($css, $theme) {
  * Sets the color used for user calendar events
  *
  * @param string $css
- * @param mixed $caluser
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_caluser($css, $theme) {
@@ -541,7 +544,7 @@ function zebra_set_caluser($css, $theme) {
  * Sets the color used for weekends on the calendar
  *
  * @param string $css
- * @param mixed $calweekend
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_calweekend($css, $theme) {
@@ -560,7 +563,7 @@ function zebra_set_calweekend($css, $theme) {
  * Sets the color used for ok/good scenarios
  *
  * @param string $css
- * @param mixed $okfontcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_okfontcolor($css, $theme) {
@@ -579,7 +582,7 @@ function zebra_set_okfontcolor($css, $theme) {
  * Sets the color used for warning scenarios
  *
  * @param string $css
- * @param mixed $warningfontcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_warningfontcolor($css, $theme) {
@@ -598,7 +601,7 @@ function zebra_set_warningfontcolor($css, $theme) {
  * Sets the color used for serious scenarios
  *
  * @param string $css
- * @param mixed $seriousfontcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_seriousfontcolor($css, $theme) {
@@ -617,7 +620,7 @@ function zebra_set_seriousfontcolor($css, $theme) {
  * Sets the color used for critical scenarios
  *
  * @param string $css
- * @param mixed $criticalfontcolor
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_criticalfontcolor($css, $theme) {
@@ -636,7 +639,7 @@ function zebra_set_criticalfontcolor($css, $theme) {
  * Sets the gradient background color for blocks, navbar, etc.
  *
  * @param string $css
- * @param mixed $colorscheme
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_colorscheme($css, $theme) {
@@ -673,7 +676,7 @@ function zebra_set_colorscheme($css, $theme) {
  * Sets the gradient background color for custommenu
  *
  * @param string $css
- * @param mixed $menucolorscheme
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_menucolorscheme($css, $theme) {
@@ -711,7 +714,7 @@ function zebra_set_menucolorscheme($css, $theme) {
  * settings value of menucolorscheme
  *
  * @param string $css
- * @param mixed $menucolorscheme
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_homeiconcolor($css, $menucolorscheme) {
@@ -751,7 +754,7 @@ function zebra_set_homeiconcolor($css, $menucolorscheme) {
  * settings value of menucolorscheme
  *
  * @param string $css
- * @param mixed $menucolorscheme
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_hmenuiconcolor($css, $theme) {
@@ -790,7 +793,7 @@ function zebra_set_hmenuiconcolor($css, $theme) {
  * settings value of menucolorscheme
  *
  * @param string $css
- * @param mixed $menucolorscheme
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_vmenuiconcolor($css, $theme) {
@@ -833,7 +836,7 @@ function zebra_set_vmenuiconcolor($css, $theme) {
  * SDTV
  *
  * @param string $css
- * @param mixed $twocolmin
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_twocolmin($css, $theme) {
@@ -857,7 +860,7 @@ function zebra_set_twocolmin($css, $theme) {
  * Monitor
  *
  * @param string $css
- * @param mixed $threecolmin
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_threecolmin($css, $theme) {
@@ -877,7 +880,7 @@ function zebra_set_threecolmin($css, $theme) {
  * This is the max-width of #page, not body
  *
  * @param string $css
- * @param mixed $pagemaxwidth
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_pagemaxwidth($css, $theme) {
@@ -897,7 +900,7 @@ function zebra_set_pagemaxwidth($css, $theme) {
  * This affects region-pre and region-post
  *
  * @param string $css
- * @param mixed $colwidth
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_colwidth($css, $theme) {
@@ -916,7 +919,7 @@ function zebra_set_colwidth($css, $theme) {
  * Calculates double the column width based on $colwidth
  *
  * @param string $css
- * @param mixed $colwidth
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_doublecolwidth($css, $theme) {
@@ -937,7 +940,7 @@ function zebra_set_doublecolwidth($css, $theme) {
  * Displays the Autohide CSS based on settings value
  *
  * @param string $css
- * @param mixed $useautohide
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_useautohide($css, $theme) {
@@ -1035,7 +1038,7 @@ function zebra_set_useautohide($css, $theme) {
  * Displays the Editing Mode CSS based on settings value
  *
  * @param string $css
- * @param mixed $editingnotify
+  * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_editingnotify($css, $theme) {
@@ -1103,7 +1106,7 @@ function zebra_set_editingnotify($css, $theme) {
  * This is the absolutely last piece of CSS loaded
  *
  * @param string $css
- * @param mixed $customcss
+ * @param stdClass $theme The theme object
  * @return string
  */
 function zebra_set_customcss($css, $theme) {

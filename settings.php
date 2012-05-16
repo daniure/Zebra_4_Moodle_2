@@ -75,7 +75,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/logourlheight';
     $title = get_string('logourlheight','theme_zebra');
     $description = get_string('logourlheightdesc', 'theme_zebra');
-    $default = '100px';
+    $default = ZEBRA_LOGOURLHEIGHT;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 5);
     $settings->add($setting);
 
@@ -91,7 +91,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/backgroundurl';
     $title = get_string('backgroundurl', 'theme_zebra');
     $description = get_string('backgroundurldesc', 'theme_zebra');
-    $default = 'core/background';
+    $default = ZEBRA_BACKGROUNDURL;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $settings->add($setting);
 
@@ -115,7 +115,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/dateformat';
     $title = get_string('dateformat', 'theme_zebra');
     $description = get_string('dateformatdesc', 'theme_zebra');
-    $default = 'F j, Y';
+    $default = ZEBRA_DATEFORMAT;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -138,7 +138,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/bodybgcolor';
     $title = get_string('bodybgcolor','theme_zebra');
     $description = get_string('bodybgcolordesc', 'theme_zebra');
-    $default = '#DDD';
+    $default = ZEBRA_BODYBGCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -146,7 +146,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/linkcolor';
     $title = get_string('linkcolor','theme_zebra');
     $description = get_string('linkcolordesc', 'theme_zebra');
-    $default = '#234B6F';
+    $default = ZEBRA_LINKCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -154,7 +154,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/hovercolor';
     $title = get_string('hovercolor','theme_zebra');
     $description = get_string('hovercolordesc', 'theme_zebra');
-    $default = '#4E7BA3';
+    $default = ZEBRA_HOVERCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -162,7 +162,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/fontcolor';
     $title = get_string('fontcolor','theme_zebra');
     $description = get_string('fontcolordesc', 'theme_zebra');
-    $default = '#2F2F2F';
+    $default = ZEBRA_FONTCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -170,7 +170,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/contentbgcolor';
     $title = get_string('contentbgcolor','theme_zebra');
     $description = get_string('contentbgcolordesc', 'theme_zebra');
-    $default = '#F4F6F8';
+    $default = ZEBRA_CONTENTBGCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -178,7 +178,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/columnbgcolor';
     $title = get_string('columnbgcolor','theme_zebra');
     $description = get_string('columnbgcolordesc', 'theme_zebra');
-    $default = '#F4F6F8';
+    $default = ZEBRA_COLUMNBGCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -186,7 +186,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/headerbgcolor';
     $title = get_string('headerbgcolor','theme_zebra');
     $description = get_string('headerbgcolordesc', 'theme_zebra');
-    $default = 'transparent';
+    $default = ZEBRA_HEADERBGCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -194,7 +194,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/footerbgcolor';
     $title = get_string('footerbgcolor','theme_zebra');
     $description = get_string('footerbgcolordesc', 'theme_zebra');
-    $default = '#DDD';
+    $default = ZEBRA_FOOTERBGCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -209,7 +209,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/calcourse';
     $title = get_string('calcourse','theme_zebra');
     $description = get_string('calcoursedesc', 'theme_zebra');
-    $default = '#FFD3BD';
+    $default = ZEBRA_CALCOURSE;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -217,7 +217,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/calglobal';
     $title = get_string('calglobal','theme_zebra');
     $description = get_string('calglobaldesc', 'theme_zebra');
-    $default = '#D6F8CD';
+    $default = ZEBRA_CALGLOBAL;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -225,7 +225,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/calgroup';
     $title = get_string('calgroup','theme_zebra');
     $description = get_string('calgroupdesc', 'theme_zebra');
-    $default = '#FEE7AE';
+    $default = ZEBRA_CALGROUP;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -233,7 +233,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/caluser';
     $title = get_string('caluser','theme_zebra');
     $description = get_string('caluserdesc', 'theme_zebra');
-    $default = '#DCE7EC';
+    $default = ZEBRA_CALUSER;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -241,7 +241,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/calweekend';
     $title = get_string('calweekend','theme_zebra');
     $description = get_string('calweekenddesc', 'theme_zebra');
-    $default = '#A00';
+    $default = ZEBRA_CALWEEKEND;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -249,7 +249,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/okfontcolor';
     $title = get_string('okfontcolor','theme_zebra');
     $description = get_string('okfontcolordesc', 'theme_zebra');
-    $default = '#060';
+    $default = ZEBRA_OKFONTCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -257,7 +257,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/warningfontcolor';
     $title = get_string('warningfontcolor','theme_zebra');
     $description = get_string('warningfontcolordesc', 'theme_zebra');
-    $default = '#F0E000';
+    $default = ZEBRA_WARNINGFONTCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -265,7 +265,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/seriousfontcolor';
     $title = get_string('seriousfontcolor','theme_zebra');
     $description = get_string('seriousfontcolordesc', 'theme_zebra');
-    $default = '#F07000';
+    $default = ZEBRA_SERIOUSFONTCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -273,7 +273,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/criticalfontcolor';
     $title = get_string('criticalfontcolor','theme_zebra');
     $description = get_string('criticalfontcolordesc', 'theme_zebra');
-    $default = '#F00000';
+    $default = ZEBRA_CRITICALFONTCOLOR;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 10);
     $settings->add($setting);
 
@@ -313,7 +313,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/twocolmin';
     $title = get_string('twocolmin','theme_zebra');
     $description = get_string('twocolmindesc', 'theme_zebra');
-    $default = '481px';
+    $default = ZEBRA_TWOCOLMIN;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 5);
     $settings->add($setting);
 
@@ -321,7 +321,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/threecolmin';
     $title = get_string('threecolmin','theme_zebra');
     $description = get_string('threecolmindesc', 'theme_zebra');
-    $default = '769px';
+    $default = ZEBRA_THREECOLMIN;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 5);
     $settings->add($setting);
 
@@ -329,7 +329,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/pagemaxwidth';
     $title = get_string('pagemaxwidth','theme_zebra');
     $description = get_string('pagemaxwidthdesc', 'theme_zebra');
-    $default = '100%';
+    $default = ZEBRA_PAGEMAXWIDTH;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 5);
     $settings->add($setting);
 
@@ -345,7 +345,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_zebra/colwidth';
     $title = get_string('colwidth','theme_zebra');
     $description = get_string('colwidthdesc','theme_zebra');
-    $default = '200px';
+    $default = ZEBRA_COLWIDTH;
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_CLEAN, 5);
     $settings->add($setting);
 
