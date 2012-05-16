@@ -73,19 +73,6 @@ a:active {
     position: relative;
 }
 
-#page-header,
-#custommenu,
-.navbar,
-#page-content,
-#page-footer,
-#region-main-box,
-#region-post-box {
-    clear: both;
-    float: none;
-    position: relative;
-    width: 100%;
-}
-
 .sitetopic,
 .coursebox,
 .block,
@@ -135,6 +122,18 @@ a:active {
     padding: 4px 4px 0 4px;
 }
 
+#region-post {
+    clear: none;
+    margin-left: 0;
+    background:-moz-linear-gradient(center top, [[setting:colorscheme]] 0%, transparent 15px) [[setting:columnbgcolor]];
+    background:-webkit-linear-gradient(top, [[setting:colorscheme]] 0%,transparent 15px) [[setting:columnbgcolor]];
+    background:-ms-linear-gradient(top, [[setting:colorscheme]] 0%,transparent 15px) [[setting:columnbgcolor]];
+    background:linear-gradient(top, [[setting:colorscheme]] 0%,transparent 15px) [[setting:columnbgcolor]];
+    -moz-box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
+    -webkit-box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
+    box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
+}
+
 #region-main {
     background:-moz-linear-gradient(center top, [[setting:colorscheme]] 0%, transparent 15px) [[setting:contentbgcolor]];
     background:-webkit-linear-gradient(top, [[setting:colorscheme]] 0%,transparent 15px) [[setting:contentbgcolor]];
@@ -157,39 +156,72 @@ a:active {
     padding-top: 4px;
 }
 
+/* 3 Column View */
+#page-header,
+#custommenu,
+.navbar,
+#page-content,
+#page-footer,
+#region-main-box,
+#region-post-box {
+    clear: both;
+    float: none;
+    position: relative;
+}
+#region-main-box {
+    left: [[setting:colwidth]];
+    width: 200%;
+}
+#region-post-box {
+    float: left;
+    left: 50%;
+    margin-left: -[[setting:doublecolwidth]];
+    width: 100%;
+}
+#region-main-wrap {
+    float: right;
+    position: relative;
+        right: 100%;
+    width: 50%;
+}
+#region-pre {
+    float: left;
+    left: [[setting:colwidth]];
+    margin-left: -50%;
+    width: [[setting:colwidth]];
+}
+#region-post {
+    clear: none;
+    float: left;
+    left: 0;
+    margin-left: 0;
+    width: [[setting:colwidth]];
+}
+#region-main {
+    margin-left: [[setting:doublecolwidth]];
+    margin-right: 0;
+}
+
+
 /* 2 Column View */
 
-@media screen and (min-width: [[setting:twocolmin]]) {
+@media screen and (max-width: [[setting:twocolmin]]) {
     #region-main-box {
-    	left: 0;
-    	width: 200%;
+        left: 0;
     }
-
     #region-post-box {
-    	left: 50%;
-    	margin-left: 0;
-    	width: 100%;
+        margin-left: 0;
     }
-
-    #region-main-wrap {
-    	float: right;
-    	position: relative;
-    	right: 100%;
-    	width: 50%;
-    }
-
-    #region-main {
-    	margin-left: [[setting:colwidth]];
-    	margin-right: 0;
-    }
-
     #region-pre {
-    	float: left;
-    	left: 0;
-    	margin-left: -50%;
-    	width: [[setting:colwidth]];
+        left: 0;
     }
-
+    #region-post {
+        clear: left;
+        margin-left: -50%;
+    }
+    #region-main {
+        margin-left: [[setting:colwidth]];
+    }
     #region-pre,
     .side-post-only #region-post {
         background:-moz-linear-gradient(center top, [[setting:colorscheme]] 0%, transparent 15px) [[setting:columnbgcolor]];
@@ -199,84 +231,45 @@ a:active {
         -moz-box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
         -webkit-box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
         box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
-    }
-
-    #region-post {
-    	clear: left;
-    	float: left;
-    	left: 0;
-    	margin-left: -50%;
-    	width: [[setting:colwidth]];
-    }
+    }  
 }
 
-/* 3 Column View */
 
-@media screen and (min-width: [[setting:threecolmin]]) {
-    #region-main-box {
-    	left: [[setting:colwidth]];
+/* 1 Column View */
+
+@media screen and (max-width: [[setting:threecolmin]]) {
+
+    .block { outline: 4px solid salmon; }
+    
+    #region-main-box,
+    #region-post-box,
+    #region-main-wrap,
+    #region-pre,
+    #region-post {
+        width: 100%;
     }
-
     #region-post-box {
-    	float: left;
-    	margin-left: -[[setting:doublecolwidth]];
+        float: none;
+        left: 0;
     }
-
-    #region-main {
-    	margin-left: [[setting:doublecolwidth]];
+    #region-main-wrap {
+        float: none;
+        right: 0;
     }
-
     #region-pre {
-        left: [[setting:colwidth]];
+        float: none;
+        margin-left: 0;
     }
-
     #region-post {
         clear: none;
-        margin-left: 0;
-        background:-moz-linear-gradient(center top, [[setting:colorscheme]] 0%, transparent 15px) [[setting:columnbgcolor]];
-        background:-webkit-linear-gradient(top, [[setting:colorscheme]] 0%,transparent 15px) [[setting:columnbgcolor]];
-        background:-ms-linear-gradient(top, [[setting:colorscheme]] 0%,transparent 15px) [[setting:columnbgcolor]];
-        background:linear-gradient(top, [[setting:colorscheme]] 0%,transparent 15px) [[setting:columnbgcolor]];
-        -moz-box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
-        -webkit-box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
-        box-shadow:0 1px 0 [[setting:columnbgcolor]] inset;
-    }
-
-    #region-post .region-content {
-        padding-top: 4px;
-    }
-
-    .side-pre-only #region-post-box {
-        margin-left: -[[setting:colwidth]];
-    }
-
-    .side-pre-only #region-main {
-        margin-left: [[setting:colwidth]];
-    }
-
-    .side-pre-only #region-pre {
+        float: none;
         left: 0;
-    }
-
-    .side-post-only #region-main-box {
-        left: 0;
-    }
-
-    .side-post-only #region-post-box {
-        margin-left: -[[setting:colwidth]];
-    }
-
-    .side-post-only #region-main {
-        margin-left: [[setting:colwidth]];
-    }
-
-    .content-only #region-main-box {
-        left: 0;
-    }
-
-    .content-only #region-post-box {
         margin-left: 0;
     }
+    #region-main {
+        margin-left: 0;
+    }
+
 }
 
 /* Report Layout */
