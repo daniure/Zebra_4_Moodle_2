@@ -66,7 +66,7 @@ if (empty($hascallink)) {
 }
 $dateformat = $PAGE->theme->settings->dateformat; //Check the theme settings for the date format
 if (empty($dateformat)) {
-    $dateformat = "F j, Y";
+    $dateformat = ZEBRA_DATEFORMAT;
 }
 $showuserpic = ($PAGE->theme->settings->userpic); //Check the theme settings to show the user profile picture
 if (!empty($PAGE->theme->settings->headeralt)) {
